@@ -9,8 +9,23 @@
 </head>
 <body>
 
-    <!-- 1. Navigation -->
     <div class="top-strip"></div>
+    
+    <!-- Infinite News Ticker - Brand Integration -->
+    <div class="ticker-container">
+        <div class="ticker-content">
+            <div class="ticker-item"><i data-lucide="megaphone" style="width: 14px;"></i> Admissions Open 2026: Secure Your Future in Tech Mastery</div>
+            <div class="ticker-item"><i data-lucide="award" style="width: 14px;"></i> Innovation Rank: #1 in Emerging Technical Institutions</div>
+            <div class="ticker-item"><i data-lucide="users" style="width: 14px;"></i> Global Placement Drive: 98% Success Rate for Class of 2025</div>
+            <div class="ticker-item"><i data-lucide="calendar" style="width: 14px;"></i> Upcoming: Global Innovation Summit - October 2026</div>
+            <!-- Duplicate for Loop -->
+            <div class="ticker-item"><i data-lucide="megaphone" style="width: 14px;"></i> Admissions Open 2026: Secure Your Future in Tech Mastery</div>
+            <div class="ticker-item"><i data-lucide="award" style="width: 14px;"></i> Innovation Rank: #1 in Emerging Technical Institutions</div>
+            <div class="ticker-item"><i data-lucide="users" style="width: 14px;"></i> Global Placement Drive: 98% Success Rate for Class of 2025</div>
+            <div class="ticker-item"><i data-lucide="calendar" style="width: 14px;"></i> Upcoming: Global Innovation Summit - October 2026</div>
+        </div>
+    </div>
+
     <header class="nav-header">
         <div class="container nav-container">
             <div class="logo">
@@ -41,16 +56,16 @@
         <!-- 2. Hero Section -->
         <section class="hero-section">
             <div class="container hero-grid">
-                <div class="hero-content" data-aos>
-                    <h1 class="hero-title">Engineering the <br>Future of <br>Technical Mastery</h1>
+                <div class="hero-content" data-aos="fade-right">
+                    <h1 class="hero-title">Engineering the <br><span class="gradient-highlight">Future of <br>Technical Mastery</span></h1>
                     <p class="hero-para">Trident Academy of Technology is where visionary research meets institutional luxury, cultivating the next lineage of global technical leaders.</p>
-                    <div class="hero-actions">
+                    <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
                         <a href="#" class="btn btn-primary">Discover the Legacy</a>
                     </div>
                 </div>
-                <div class="hero-image-wrapper" data-aos>
+                <div class="hero-image-wrapper" data-aos="zoom-in" data-aos-delay="200">
                     <div class="hero-glow"></div>
-                    <div class="hero-image-card">
+                    <div class="hero-image-card" data-aos="zoom-out" data-aos-delay="400">
                         <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1200" alt="Modern University Campus Building">
                     </div>
                 </div>
@@ -58,40 +73,40 @@
         </section>
 
         <!-- 3. Featured Editorial News -->
-        <section class="news-section">
+        <section class="news-section" style="background-color: #070B2B; color: white;">
             <div class="container">
-                <div class="section-header" data-aos>
-                    <h2 class="section-title">Institutional Highlights</h2>
+                <div class="section-header" data-aos="fade-down">
+                    <h2 class="section-title gradient-highlight">Institutional Highlights</h2>
                     <p>Current initiatives driving global technological impact.</p>
                 </div>
                 <div class="news-grid">
-                    <div class="main-featured-card" data-aos>
-                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200" alt="Advanced Engineering Research" class="card-img">
+                    <div class="main-featured-card" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200" alt="Advanced Engineering Research" class="card-img" data-aos="zoom-in" data-aos-delay="200">
                         <div class="card-content">
-                            <h4>Quantum Computing & AI: The Trident Lab Initiative</h4>
-                            <p>Exploring the intersection of neural networks and hardware architecture in our flagship research facility.</p>
+                            <h4 style="color: white !important;">Quantum Computing & AI: The Trident Lab Initiative</h4>
+                            <p style="color: rgba(255, 255, 255, 0.8) !important;">Exploring the intersection of neural networks and hardware architecture in our flagship research facility.</p>
                         </div>
                     </div>
                     <div class="news-list">
-                        <div class="news-item" data-aos>
+                        <div class="news-item card-hover" data-aos="fade-left">
                             <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=200" alt="Alumni Summit">
                             <div>
-                                <h5>Global Alumni Summit 2026</h5>
-                                <p>Connecting technical leaders in Silicon Valley.</p>
+                                <h5 style="color: white !important;">Global Alumni Summit 2026</h5>
+                                <p style="color: rgba(255, 255, 255, 0.7) !important;">Connecting technical leaders in Silicon Valley.</p>
                             </div>
                         </div>
-                        <div class="news-item" data-aos>
+                        <div class="news-item card-hover" data-aos="fade-left" data-aos-delay="100">
                             <img src="https://images.unsplash.com/photo-1516110833967-0b5716ca1387?auto=format&fit=crop&q=80&w=200" alt="Robotics Sustainability">
                             <div>
-                                <h5>Sustainability in Robotics</h5>
-                                <p>Defining the eco-standard for industrial automation.</p>
+                                <h5 style="color: white !important;">Sustainability in Robotics</h5>
+                                <p style="color: rgba(255, 255, 255, 0.7) !important;">Defining the eco-standard for industrial automation.</p>
                             </div>
                         </div>
-                        <div class="news-item" data-aos>
+                        <div class="news-item card-hover" data-aos="fade-left" data-aos-delay="200">
                             <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=200" alt="News 3">
                             <div>
-                                <h5>New Cybersecurity Wing</h5>
-                                <p>State-of-the-art defense laboratory opening soon.</p>
+                                <h5 style="color: white !important;">New Cybersecurity Wing</h5>
+                                <p style="color: rgba(255, 255, 255, 0.7) !important;">State-of-the-art defense laboratory opening soon.</p>
                             </div>
                         </div>
                     </div>
@@ -101,9 +116,9 @@
         
         <!-- 3.5 Research Excellence Section -->
         <section class="research-section" id="research">
-            <div class="container visual-row" data-aos>
+            <div class="container visual-row" data-aos="fade-up">
                 <div class="row-content">
-                    <h2 class="section-title">Architecting the <br><span class="brand-highlight">Next Frontier</span></h2>
+                    <h2 class="section-title">Architecting the <br><span class="gradient-highlight">Next Frontier</span></h2>
                     <p>Our research laboratories are the heart of Trident Academy, where Modern University Campus initiatives meet the rigors of breakthrough discovery.</p>
                     <div class="research-tags" style="margin-top: 20px; display: flex; gap: 10px;">
                         <span class="tag">AI & Robotics</span>
@@ -111,7 +126,7 @@
                     </div>
                     <a href="#" class="btn btn-primary" style="margin-top: 30px;">View Publications</a>
                 </div>
-                <div class="research-image-card">
+                <div class="research-image-card" data-aos="zoom-in" data-aos-delay="300">
                     <img src="https://images.unsplash.com/photo-1576085898323-218337e3e43c?auto=format&fit=crop&q=80&w=1200" alt="Robotics and AI Research Lab">
                     <div class="image-overlay-glow"></div>
                 </div>
@@ -120,12 +135,12 @@
 
         <!-- 4. Visual Content Row -->
         <section class="visual-row-section">
-            <div class="container visual-row" data-aos>
-                <div class="hero-image-card">
+            <div class="container visual-row" data-aos="fade-up">
+                <div class="hero-image-card" data-aos="zoom-in" data-aos-delay="300">
                     <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1200" alt="Digital Collaboration">
                 </div>
                 <div class="row-content">
-                    <h2 class="section-title">Cultivating Global <br>Innovation Minds</h2>
+                    <h2 class="section-title">Cultivating <br><span class="gradient-highlight">Global Innovation Minds</span></h2>
                     <p>Our curriculum is designed for the high-end technologist, blending executive leadership with deep-tech proficiency to ensure global readiness in various fast-changing sectors.</p>
                     <a href="#" class="btn btn-primary" style="margin-top: 30px;">Our Curriculum</a>
                 </div>
@@ -135,33 +150,33 @@
         <!-- 5. Student Stories [Light Mode] -->
         <section class="light-section" id="about">
             <div class="container">
-                <div class="section-header" data-aos>
+                <div class="section-header" data-aos="fade-down">
                     <h2 class="section-title brand-highlight">The Trident Journey</h2>
                     <p>Hear from the next generation of academic pioneers.</p>
                 </div>
                 <div class="story-grid">
-                    <div class="story-card" data-aos>
+                    <div class="story-card card-hover" data-aos="fade-up">
                         <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=400" alt="Student">
                         <div class="card-content">
                             <h5 class="brand-highlight">Elena Vance</h5>
                             <p>Master of Computer Science</p>
                         </div>
                     </div>
-                    <div class="story-card" data-aos>
+                    <div class="story-card card-hover" data-aos="fade-up" data-aos-delay="100">
                         <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=400" alt="Student">
                         <div class="card-content">
                             <h5 class="brand-highlight">David Chen</h5>
                             <p>AI Research Fellow</p>
                         </div>
                     </div>
-                    <div class="story-card" data-aos>
+                    <div class="story-card card-hover" data-aos="fade-up" data-aos-delay="200">
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400" alt="Student">
                         <div class="card-content">
                             <h5 class="brand-highlight">Samuel Marcus</h5>
                             <p>Cyber Resilience Lead</p>
                         </div>
                     </div>
-                    <div class="story-card" data-aos>
+                    <div class="story-card card-hover" data-aos="fade-up" data-aos-delay="300">
                         <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=400" alt="Student">
                         <div class="card-content">
                             <h5 class="brand-highlight">Isabella Thorne</h5>
@@ -175,16 +190,16 @@
         <!-- 6. Special Stats Strip -->
         <section class="stats-strip">
             <div class="container stats-flex">
-                <div data-aos>
-                    <span class="stat-val">#1</span>
+                <div data-aos="zoom-in">
+                    <span class="stat-val gradient-highlight">#1</span>
                     <span class="stat-label">Innovation Rank</span>
                 </div>
-                <div data-aos>
-                    <span class="stat-val">2.5k+</span>
+                <div data-aos="zoom-in" data-aos-delay="200">
+                    <span class="stat-val gradient-highlight">2.5k+</span>
                     <span class="stat-label">Tech Partners</span>
                 </div>
-                <div data-aos>
-                    <span class="stat-val">98%</span>
+                <div data-aos="zoom-in" data-aos-delay="400">
+                    <span class="stat-val gradient-highlight">98%</span>
                     <span class="stat-label">Global Placement</span>
                 </div>
             </div>
@@ -193,23 +208,23 @@
         <!-- 7. Campus Spaces -->
         <section class="campus-section" id="campus">
             <div class="container">
-                <div class="section-header" data-aos>
-                    <h2 class="section-title">Institutional Sanctum</h2>
+                <div class="section-header" data-aos="fade-down">
+                    <h2 class="section-title gradient-highlight">Institutional Sanctum</h2>
                     <p>Designed for holistic development and unparalleled technical focus.</p>
                 </div>
                 <div class="campus-grid">
-                    <div class="campus-card" data-aos>
+                    <div class="campus-card" data-aos="flip-up">
                         <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200" alt="Library">
                         <div class="campus-overlay">
-                            <h4 class="light-highlight">The Global Digital Commons</h4>
-                            <p class="brand-highlight">An executive workspace for collaborative research.</p>
+                            <h4 class="light-highlight" style="color: white !important;">The Global Digital Commons</h4>
+                            <p style="color: white !important;">An executive workspace for collaborative research.</p>
                         </div>
                     </div>
-                    <div class="campus-card" data-aos>
+                    <div class="campus-card" data-aos="flip-up">
                         <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1200" alt="Studio">
                         <div class="campus-overlay">
-                            <h4 class="light-highlight">The Creative Resilience Center</h4>
-                            <p class="brand-highlight">Modern studio environments for conceptual design.</p>
+                            <h4 class="light-highlight" style="color: white !important;">The Creative Resilience Center</h4>
+                            <p style="color: white !important;">Modern studio environments for conceptual design.</p>
                         </div>
                     </div>
                 </div>
@@ -219,28 +234,28 @@
         <!-- 8. Impact Highlights [Light Mode] -->
         <section class="light-section impact-strip">
             <div class="container">
-                <div class="section-header" style="text-align: center;" data-aos>
-                    <h2 class="section-title brand-highlight">Global Impact 2026</h2>
+                <div class="section-header" style="text-align: center;" data-aos="fade-down">
+                    <h2 class="section-title gradient-highlight">Global Impact 2026</h2>
                 </div>
                 <div class="impact-row">
-                    <div class="impact-item" data-aos>
+                    <div class="impact-item" data-aos="fade-up">
                         <i data-lucide="award"></i>
-                        <h4 class="brand-highlight" style="margin-top: 15px;">240+</h4>
+                        <h4 class="gradient-highlight" style="margin-top: 15px; font-size: 2.5rem;">240+</h4>
                         <p>Tech Awards</p>
                     </div>
-                    <div class="impact-item" data-aos>
+                    <div class="impact-item" data-aos="fade-up" data-aos-delay="100">
                         <i data-lucide="globe"></i>
-                        <h4 class="brand-highlight" style="margin-top: 15px;">45k+</h4>
+                        <h4 class="gradient-highlight" style="margin-top: 15px; font-size: 2.5rem;">45k+</h4>
                         <p>Elite Alumni</p>
                     </div>
-                    <div class="impact-item" data-aos>
+                    <div class="impact-item" data-aos="fade-up" data-aos-delay="200">
                         <i data-lucide="zap"></i>
-                        <h4 class="brand-highlight" style="margin-top: 15px;">$2B+</h4>
+                        <h4 class="gradient-highlight" style="margin-top: 15px; font-size: 2.5rem;">$2B+</h4>
                         <p>Funded Research</p>
                     </div>
-                    <div class="impact-item" data-aos>
+                    <div class="impact-item" data-aos="fade-up" data-aos-delay="300">
                         <i data-lucide="shield"></i>
-                        <h4 class="brand-highlight" style="margin-top: 15px;">200+</h4>
+                        <h4 class="gradient-highlight" style="margin-top: 15px; font-size: 2.5rem;">200+</h4>
                         <p>Faculty Leads</p>
                     </div>
                 </div>
@@ -250,26 +265,26 @@
         <!-- 9. Faculty Voices -->
         <section class="faculty-section" id="faculty">
             <div class="container">
-                <div class="section-header" style="text-align: center;" data-aos>
-                    <h2 class="section-title">Voices of Excellence</h2>
+                <div class="section-header" style="text-align: center;" data-aos="fade-down">
+                    <h2 class="section-title gradient-highlight">Voices of Excellence</h2>
                     <p>Mentorship from the industry's most distinguished technical leaders.</p>
                 </div>
                 <div class="faculty-grid">
-                    <div class="faculty-card" data-aos>
+                    <div class="faculty-card card-hover" data-aos="fade-up">
                         <div class="faculty-thumb">
                             <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=300" alt="Professor" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <h4>Dr. Julian Thorne</h4>
                         <p>Dean of Computer Science</p>
                     </div>
-                    <div class="faculty-card" data-aos>
+                    <div class="faculty-card card-hover" data-aos="fade-up" data-aos-delay="100">
                         <div class="faculty-thumb">
                             <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=300" alt="Professor" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <h4>Prof. Sarah Vance</h4>
                         <p>Director of Quantitative Finance</p>
                     </div>
-                    <div class="faculty-card" data-aos>
+                    <div class="faculty-card card-hover" data-aos="fade-up" data-aos-delay="200">
                         <div class="faculty-thumb">
                             <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&q=80&w=300" alt="Professor" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
@@ -282,8 +297,8 @@
 
         <!-- 10. Mid-Page Quote Section -->
         <section class="quote-section">
-            <div class="container" data-aos>
-                <h3 class="quote-text">"Excellence is not a singular act, but a lineage of intentional masteries."</h3>
+            <div class="container" data-aos="zoom-in">
+                <h3 class="quote-text gradient-highlight">"Excellence is not a singular act, but a lineage of intentional masteries."</h3>
                 <div class="quote-divider"></div>
                 <p style="margin-top: 20px;">Institutional Philosophy 2026</p>
             </div>
@@ -292,58 +307,82 @@
         <!-- 11. Final CTA Banner -->
         <section class="cta-section" id="admissions">
             <div class="container">
-                <div class="cta-banner" data-aos>
-                    <h2 style="color: white;">Join the Global Standard</h2>
-                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">Admissions for the 2026 Academic Season are now open. Secure your place at the forefront of the technological revolution.</p>
-                    <a href="#" class="btn btn-white">Application Portal</a>
+                <div class="cta-banner" data-aos="zoom-in">
+                    <h2 style="color: var(--black) !important;">Join the Global Standard</h2>
+                    <p style="color: #4a5568 !important;">Admissions for the 2026 Academic Season are now open. Secure your place at the forefront of the technological revolution.</p>
+                    <a href="#" class="btn btn-dark">Application Portal</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- 12. Footer -->
+    <!-- 12. Footer Redesign -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-logo">
-                    <div class="logo" style="margin-bottom: 20px;">
-                        <img src="https://site-generator-documents.s3.eu-north-1.amazonaws.com/TAT+Logoo.png" alt="Trident Logo" class="brand-logo" style="height: 50px;">
+                <div class="footer-brand" data-aos="fade-right">
+                    <div class="logo">
+                        <img src="https://site-generator-documents.s3.eu-north-1.amazonaws.com/TAT+Logoo.png" alt="Trident Logo" class="brand-logo" style="height: 55px;">
                         <div class="logo-text">
-                            <span class="logo-serif">TRIDENT</span>
+                            <span class="logo-serif" style="color: white; font-size: 1.5rem;">TRIDENT</span>
+                            <span class="logo-sans" style="color: #718096; font-size: 0.6rem;">ACADEMY OF TECHNOLOGY</span>
                         </div>
                     </div>
-                    <p>Building the gold standard for global technical and institutional education.</p>
+                    <p>Empowering the next generation of global leaders through world-class technical education, innovative research, and an unwavering commitment to excellence.</p>
+                    <div class="footer-contact">
+                        <div class="contact-info-item">
+                            <div class="contact-icon-box"><i data-lucide="map-pin" style="width: 18px;"></i></div>
+                            <span class="contact-text">F2/A, Chandaka Industrial Estate, Bhubaneswar, Odisha, Pin: 751024, India</span>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon-box"><i data-lucide="phone" style="width: 18px;"></i></div>
+                            <span class="contact-text">+91 98611 91195</span>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon-box"><i data-lucide="mail" style="width: 18px;"></i></div>
+                            <span class="contact-text">info@trident.ac.in</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-col">
-                    <h4>Academia</h4>
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
+                    <h4>Academics</h4>
                     <ul>
-                        <li><a href="#">School of AI</a></li>
-                        <li><a href="#">Engineering</a></li>
-                        <li><a href="#">Digital Arts</a></li>
-                        <li><a href="#">Finance</a></li>
+                        <li><a href="#">Undergraduate Studies</a></li>
+                        <li><a href="#">Postgraduate Studies</a></li>
+                        <li><a href="#">Doctoral Programs</a></li>
+                        <li><a href="#">Research Centers</a></li>
+                        <li><a href="#">Academic Calendar</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>The Institution</h4>
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
+                    <h4>Campus Life</h4>
                     <ul>
-                        <li><a href="#">Research Portal</a></li>
-                        <li><a href="#">Global Alumni</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Newsroom</a></li>
+                        <li><a href="#">Student Hostels</a></li>
+                        <li><a href="#">Clubs & Societies</a></li>
+                        <li><a href="#">Sports & Recreation</a></li>
+                        <li><a href="#">Health & Wellness</a></li>
+                        <li><a href="#">Campus Safety</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
+                    <h4>Resources</h4>
                     <ul>
-                        <li><a href="#">Inquiries</a></li>
-                        <li><a href="#">Admissions</a></li>
-                        <li><a href="#">Campus Map</a></li>
-                        <li><a href="#">Security</a></li>
+                        <li><a href="#">Admissions Portal</a></li>
+                        <li><a href="#">Alumni Network</a></li>
+                        <li><a href="#">Career Placements</a></li>
+                        <li><a href="#">NIRF Data</a></li>
+                        <li><a href="#">Tenders & Notices</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="copy">
-                &copy; 2026 Trident Academy of Technology. All rights reserved.
+            <div class="footer-bottom">
+                <div class="copy">
+                    &copy; 2026 Trident Academy of Technology. All rights reserved.
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
             </div>
         </div>
     </footer>

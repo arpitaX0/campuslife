@@ -6,27 +6,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Prata&display=swap');
 
 :root {
-    /* Colors */
-    --navy-bg: #c0f0f7;
-    --navy-block: #ffffff;
-    --primary-text: #070B2B;
-    --royal-blue: #34cbc4;
-    --violet: #52a8a4;
+    /* Trident Brand Palette - Resynced from GitHub */
+    --royal-blue: #2C3A8C;    /* Main Brand Navy */
+    --brand-gold: #A59381;    /* Accent Gold/Tan */
+    --soft-off-white: #FAF9F6; /* Primary Light Background */
+    --charcoal: #3E3A36;      /* Primary Text */
+    --rose-primary: #8B6E66;  /* Academic Accent */
+    
     --white: #FFFFFF;
-    --text-secondary: #4A5568;
-    --light-bg: #f0fafd;
-    --light-border: rgba(52, 203, 196, 0.1);
+    --black: #000000;
+    --navy-block: #070B2B;
+    --brand-accent: #d83b9d; /* Pink highlight accent */
+    --violet: #5a5af3;      /* Blue highlight accent */
     
     /* Typography */
     --font-heading: 'Playfair Display', serif;
-    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Playfair Display', serif;
     
     /* Spacing & Borders */
     --container-max: 1140px;
     --radius-lg: 32px;
     --radius-md: 20px;
     --transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    --brand-text: #1fc5e0;
+    --brand-text: var(--brand-gold);
+    --gradient-primary: linear-gradient(135deg, #d83b9d 0%, #a259ff 50%, #5a5af3 100%);
 }
 
 /* Reset & Base */
@@ -41,8 +44,8 @@ html {
 }
 
 body {
-    background-color: var(--navy-bg);
-    color: var(--primary-text);
+    background-color: var(--soft-off-white);
+    color: var(--charcoal);
     font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
@@ -71,13 +74,23 @@ p {
 }
 
 .brand-highlight {
-    color: var(--brand-text) !important;
-    text-shadow: 0 0 15px rgba(31, 197, 224, 0.2);
+    color: var(--royal-blue) !important;
+    text-shadow: 0 0 15px rgba(44, 58, 140, 0.1);
+}
+
+.gradient-highlight {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 700;
 }
 
 .tag {
-    background: rgba(31, 197, 224, 0.1);
-    color: var(--brand-text);
+    background: rgba(165, 147, 129, 0.1);
+    color: var(--brand-gold);
     padding: 6px 15px;
     border-radius: 50px;
     font-size: 0.8rem;
@@ -246,6 +259,17 @@ p {
 .btn-white {
     background: var(--primary-text);
     color: var(--white);
+}
+
+.btn-dark {
+    background: #0f1115;
+    color: var(--white);
+}
+
+.btn-dark:hover {
+    background: var(--black);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
 .btn:hover {
@@ -422,27 +446,37 @@ p {
 
 /* Blue/Purple Stats Strip */
 .stats-strip {
-    background: linear-gradient(90deg, var(--royal-blue), var(--violet));
-    padding: 80px 0;
+    background: #070B2B;
+    padding: 100px 0;
     text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .stats-flex {
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .stat-val {
-    font-size: 3.5rem;
+    font-size: 5rem;
     font-family: var(--font-heading);
     display: block;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
 .stat-label {
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.8rem;
-    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--white);
+    opacity: 0.8;
 }
 
 /* Campus Spaces */
@@ -476,8 +510,18 @@ p {
 
 /* Achievement Impact Strip */
 .impact-strip {
+    background: #070B2B;
     text-align: center;
-    border-bottom: 1px solid #EDEDF2;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--white);
+}
+
+.impact-strip .section-title {
+    color: var(--white) !important;
+}
+
+.impact-strip p {
+    color: #a0aec0;
 }
 
 .impact-row {
@@ -487,8 +531,16 @@ p {
 }
 
 .impact-item {
-    padding: 40px;
+    padding: 60px 40px;
     position: relative;
+    transition: var(--transition);
+}
+
+.impact-item i {
+    width: 45px;
+    height: 45px;
+    color: var(--royal-blue);
+    margin-bottom: 25px;
 }
 
 .impact-item:not(:last-child)::after {
@@ -498,7 +550,12 @@ p {
     top: 25%;
     height: 50%;
     width: 1px;
-    background: #DDDDE4;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.impact-item:hover {
+    background: rgba(255, 255, 255, 0.03);
+    transform: translateY(-5px);
 }
 
 /* Faculty Voices */
@@ -550,66 +607,264 @@ p {
 
 /* Final CTA Banner */
 .cta-section {
-    padding-bottom: 100px;
+    background-color: var(--soft-off-white);
+    padding: 120px 0;
 }
 
 .cta-banner {
-    background: linear-gradient(135deg, var(--royal-blue), var(--violet));
-    border-radius: var(--radius-lg);
-    padding: 100px 60px;
+    background-color: var(--soft-off-white);
+    border-radius: 20px;
+    padding: 80px 40px;
     text-align: center;
-    box-shadow: 0 40px 100px rgba(101, 88, 245, 0.3);
+    color: var(--charcoal);
+    box-shadow: 0 4px 30px rgba(44, 58, 140, 0.03); /* Subtler shadow */
 }
+
+/* Infinite Ticker - Brand Implementation */
+.ticker-container {
+    width: 100%;
+    background: #0f1115;
+    color: var(--white);
+    padding: 15px 0;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ticker-content {
+    display: flex;
+    white-space: nowrap;
+    animation: ticker 40s linear infinite;
+    gap: 100px;
+}
+
+.ticker-content:hover {
+    animation-play-state: paused;
+}
+
+.ticker-item {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+@keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Premium Card Hover */
+.card-hover {
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 40px 100px rgba(44, 58, 140, 0.1);
+}
+
 
 .cta-banner h2 {
     font-size: 3.5rem;
     margin-bottom: 24px;
+    color: var(--black) !important;
 }
 
-/* Footer */
+.cta-banner p {
+    color: #4a5568 !important;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+/* Footer Redesign */
 .footer {
-    padding: 80px 0 40px;
-    background-color: #34cbc4;
-    color: var(--primary-text);
+    padding: 100px 0 40px;
+    background-color: #0f1115;
+    color: #a0aec0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 2fr repeat(3, 1fr);
-    gap: 60px;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 80px;
     margin-bottom: 80px;
 }
 
-.footer-logo h2 { font-size: 1.2rem; margin-bottom: 20px; }
+.footer-brand p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin: 25px 0 35px;
+    color: #718096;
+    max-width: 350px;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-icon-box {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+}
+
+.contact-text {
+    font-size: 0.9rem;
+    color: #e2e8f0;
+}
 
 .footer h4 { 
     font-family: var(--font-body);
-    font-size: 0.9rem;
-    font-weight: 700;
+    font-size: 1.1rem;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 25px;
-    color: var(--primary-text);
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+    color: var(--white);
+    position: relative;
+    padding-left: 15px;
+}
+
+.footer h4::before {
+    content: '|';
+    position: absolute;
+    left: 0;
+    color: #d83b9d;
+    font-weight: 900;
 }
 
 .footer ul { list-style: none; }
-.footer li { margin-bottom: 12px; }
-.footer a { text-decoration: none; color: #333333; transition: 0.3s; font-size: 0.9rem; }
-.footer a:hover { color: var(--royal-blue); }
+.footer li { margin-bottom: 18px; }
+.footer a { 
+    text-decoration: none; 
+    color: #718096; 
+    transition: 0.3s; 
+    font-size: 0.95rem; 
+}
+.footer a:hover { 
+    color: var(--white); 
+    padding-left: 5px;
+}
 
-.copy { text-align: center; border-top: 1px solid rgba(0, 0, 0, 0.1); padding-top: 40px; font-size: 0.8rem; letter-spacing: 1px; }
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 40px;
+}
+
+.copy { font-size: 0.9rem; color: #4a5568; }
+
+.footer-legal {
+    display: flex;
+    gap: 30px;
+}
+
+.footer-legal a {
+    font-size: 0.9rem;
+    color: #4a5568;
+    text-decoration: none;
+}
+
+.footer-legal a:hover {
+    color: var(--white);
+}
 
 /* Animation Classes */
 [data-aos] {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s, transform 1s;
+    transition-duration: 1.2s; /* Standardized to 1.2s */
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    transition-property: opacity, transform;
+    will-change: opacity, transform;
 }
 
+/* Specific Animation Types - 40px subtler offsets */
+[data-aos^="fade-up"] { transform: translateY(40px); }
+[data-aos^="fade-down"] { transform: translateY(-40px); }
+[data-aos^="fade-left"] { transform: translateX(40px); }
+[data-aos^="fade-right"] { transform: translateX(-40px); }
+[data-aos^="zoom-in"] { transform: scale(0.95) translateY(20px); }
+[data-aos^="zoom-out"] { transform: scale(1.05) translateY(20px); }
+[data-aos^="flip-up"] { transform: rotateX(-95deg); transform-origin: top; }
+
+/* Image Animation Refinement - Slower & Subtler Zoom */
+.hero-image-card, .research-image-card, .campus-card, .main-featured-card {
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.hero-image-card:hover, .research-image-card:hover, .campus-card:hover, .main-featured-card:hover {
+    transform: scale(1.02) translateY(-5px);
+    box-shadow: 0 40px 90px rgba(7, 11, 43, 0.1);
+}
+
+.hero-image-card img, .research-image-card img, .campus-card img, .card-img {
+    transition: transform 2.5s cubic-bezier(0.16, 1, 0.3, 1); /* Slower zoom */
+}
+
+.hero-image-card:hover img, .research-image-card:hover img, .campus-card:hover img, .main-featured-card:hover .card-img {
+    transform: scale(1.05); /* Subtler zoom */
+}
+
+/* Active State */
 [data-aos].active {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
 }
+
+/* Staggered Delays for Grid Items (Auto-applied) */
+.news-grid > div:nth-child(1) { transition-delay: 0.1s; }
+.news-grid > div:nth-child(2) { transition-delay: 0.2s; }
+
+.news-list > div:nth-child(1) { transition-delay: 0.3s; }
+.news-list > div:nth-child(2) { transition-delay: 0.4s; }
+.news-list > div:nth-child(3) { transition-delay: 0.5s; }
+
+.story-grid > div:nth-child(1) { transition-delay: 0.1s; }
+.story-grid > div:nth-child(2) { transition-delay: 0.2s; }
+.story-grid > div:nth-child(3) { transition-delay: 0.3s; }
+.story-grid > div:nth-child(4) { transition-delay: 0.4s; }
+
+.impact-row > div:nth-child(1) { transition-delay: 0.1s; }
+.impact-row > div:nth-child(2) { transition-delay: 0.2s; }
+.impact-row > div:nth-child(3) { transition-delay: 0.3s; }
+.impact-row > div:nth-child(4) { transition-delay: 0.4s; }
+
+.faculty-grid > div:nth-child(1) { transition-delay: 0.1s; }
+.faculty-grid > div:nth-child(2) { transition-delay: 0.2s; }
+.faculty-grid > div:nth-child(3) { transition-delay: 0.3s; }
+
+.campus-grid > div:nth-child(1) { transition-delay: 0.1s; }
+.campus-grid > div:nth-child(2) { transition-delay: 0.2s; }
+
+/* Custom Delays via Data Attribute */
+[data-aos-delay="100"] { transition-delay: 100ms; }
+[data-aos-delay="200"] { transition-delay: 200ms; }
+[data-aos-delay="300"] { transition-delay: 300ms; }
+[data-aos-delay="400"] { transition-delay: 400ms; }
+[data-aos-delay="500"] { transition-delay: 500ms; }
+[data-aos-delay="600"] { transition-delay: 600ms; }
 
 /* Tablet/Mobile Breakpoints */
 @media (max-width: 1024px) {
