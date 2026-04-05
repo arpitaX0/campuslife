@@ -4,53 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trident Academy of Technology | Premium Academic Excellence</title>
+    <meta name="description" content="Trident Academy of Technology — NAAC 'A' Accredited institution affiliated to BPUT, offering world-class technical education, research, and campus life.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-    <div class="top-strip"></div>
-    
-    <!-- Infinite News Ticker - Brand Integration -->
-    <div class="ticker-container">
-        <div class="ticker-content">
-            <div class="ticker-item"><i data-lucide="megaphone" style="width: 14px;"></i> Admissions Open 2026: Secure Your Future in Tech Mastery</div>
-            <div class="ticker-item"><i data-lucide="award" style="width: 14px;"></i> Innovation Rank: #1 in Emerging Technical Institutions</div>
-            <div class="ticker-item"><i data-lucide="users" style="width: 14px;"></i> Global Placement Drive: 98% Success Rate for Class of 2025</div>
-            <div class="ticker-item"><i data-lucide="calendar" style="width: 14px;"></i> Upcoming: Global Innovation Summit - October 2026</div>
-            <!-- Duplicate for Loop -->
-            <div class="ticker-item"><i data-lucide="megaphone" style="width: 14px;"></i> Admissions Open 2026: Secure Your Future in Tech Mastery</div>
-            <div class="ticker-item"><i data-lucide="award" style="width: 14px;"></i> Innovation Rank: #1 in Emerging Technical Institutions</div>
-            <div class="ticker-item"><i data-lucide="users" style="width: 14px;"></i> Global Placement Drive: 98% Success Rate for Class of 2025</div>
-            <div class="ticker-item"><i data-lucide="calendar" style="width: 14px;"></i> Upcoming: Global Innovation Summit - October 2026</div>
-        </div>
-    </div>
+    <!-- ===== HEADER ===== -->
+    <div class="header-wrapper" id="headerWrapper">
 
-    <header class="nav-header">
-        <div class="container nav-container">
-            <div class="logo">
-                <img src="https://site-generator-documents.s3.eu-north-1.amazonaws.com/TAT+Logoo.png" alt="Trident Logo" class="brand-logo">
-                <div class="logo-text">
-                    <span class="logo-serif">TRIDENT</span>
-                    <span class="logo-sans">ACADEMY OF TECHNOLOGY</span>
+        <!-- Utility Bar -->
+        <div class="utility-bar" id="utilityBar">
+            <div class="utility-inner">
+                <span class="utility-left">Affiliated to BPUT &nbsp;<span class="util-sep">|</span>&nbsp; NAAC 'A' Accredited</span>
+                <div class="utility-right">
+                    <a href="https://alumni-tat.tekkzy.com/" class="utility-link">
+                        <i data-lucide="users" style="width:12px;height:12px;"></i> Alumni
+                    </a>
                 </div>
             </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#admissions">Admissions</a></li>
-                    <li><a href="#academics">Academics</a></li>
-                    <li><a href="#research">Research</a></li>
-                    <li><a href="#campus">Campus Life</a></li>
-                    <li><a href="#activities">Activities</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                </ul>
-            </nav>
-            <div class="nav-cta">
-                <a href="#" class="btn btn-apply">Apply Now</a>
-            </div>
         </div>
-    </header>
+
+        <!-- Main Header -->
+        <header class="nav-header" id="mainHeader">
+            <div class="nav-container-new">
+
+                <!-- Logo -->
+                <a href="https://tat.tekkzy.com/" class="logo-lockup">
+                    <img src="https://site-generator-documents.s3.eu-north-1.amazonaws.com/TAT+Logoo.png" alt="TAT Logo" class="brand-logo-new">
+                    <div class="logo-text-new">
+                        <div class="logo-serif-new">Trident</div>
+                        <div class="logo-rule"></div>
+                        <div class="logo-sub">Academy of Technology</div>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="#about" class="nav-link-new">About</a></li>
+                        <li><a href="#admissions" class="nav-link-new">Admissions</a></li>
+                        <li><a href="#academics" class="nav-link-new">Academics</a></li>
+                        <li><a href="#research" class="nav-link-new">Research</a></li>
+                        <li><a href="#campus" class="nav-link-new">Campus Life</a></li>
+                        <li><a href="#activities" class="nav-link-new">Activities</a></li>
+                        <li><a href="#contact" class="nav-link-new">Contact Us</a></li>
+                    </ul>
+                </nav>
+
+                <!-- CTA -->
+                <div class="header-cta">
+                    <a href="#admissions" class="btn-rose-header">Apply Now</a>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+                    <i data-lucide="menu" id="menuIcon"></i>
+                </button>
+
+            </div>
+
+            <!-- Mobile Drawer -->
+            <div class="mobile-drawer" id="mobileDrawer">
+                <div class="mobile-drawer-inner">
+                    <a href="#about" class="mobile-nav-link" onclick="closeMobileMenu()">About</a>
+                    <a href="#admissions" class="mobile-nav-link" onclick="closeMobileMenu()">Admissions</a>
+                    <a href="#academics" class="mobile-nav-link" onclick="closeMobileMenu()">Academics</a>
+                    <a href="#research" class="mobile-nav-link" onclick="closeMobileMenu()">Research</a>
+                    <a href="#campus" class="mobile-nav-link" onclick="closeMobileMenu()">Campus Life</a>
+                    <a href="#activities" class="mobile-nav-link" onclick="closeMobileMenu()">Activities</a>
+                    <a href="#contact" class="mobile-nav-link" onclick="closeMobileMenu()">Contact Us</a>
+                    <div class="mobile-cta-wrap">
+                        <a href="#admissions" class="btn-rose-mobile">START APPLICATION</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+    </div>
 
     <main>
         <!-- 2. Hero Section -->
@@ -314,98 +346,188 @@
                 </div>
             </div>
         </section>
-    </main>
+    </main>    <!-- ===== FOOTER ===== -->
+    <footer class="footer-new">
+        <!-- Skewed accent -->
+        <div class="footer-skew-accent"></div>
+        <!-- Watermark logo -->
+        <div class="footer-watermark">
+            <img src="https://site-generator-documents.s3.eu-north-1.amazonaws.com/TAT+Logoo.png" alt="">
+        </div>
 
-    <!-- 12. Footer Redesign -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand" data-aos="fade-right">
-                    <div class="logo">
-                        <img src="https://site-generator-documents.s3.eu-north-1.amazonaws.com/TAT+Logoo.png" alt="Trident Logo" class="brand-logo" style="height: 55px;">
-                        <div class="logo-text">
-                            <span class="logo-serif" style="color: white; font-size: 1.5rem;">TRIDENT</span>
-                            <span class="logo-sans" style="color: #718096; font-size: 0.6rem;">ACADEMY OF TECHNOLOGY</span>
-                        </div>
+        <div class="footer-inner">
+
+            <!-- Newsletter Block -->
+            <div class="newsletter-block" data-aos="fade-up">
+                <div class="newsletter-gold-bar"></div>
+                <div class="newsletter-corner-tr"></div>
+                <div class="newsletter-corner-bl"></div>
+                <div class="newsletter-text">
+                    <h3 class="newsletter-heading">Stay informed, <br>stay <span class="newsletter-gold">ahead.</span></h3>
+                    <p class="newsletter-sub">Subscribe to the official Trident Newsletter for updates on research, events, and campus developments.</p>
+                </div>
+                <div class="newsletter-form-wrap">
+                    <div class="newsletter-form">
+                        <input type="email" id="newsletterEmail" placeholder="Enter your email address" class="newsletter-input">
+                        <button class="newsletter-btn">
+                            Subscribe <i data-lucide="arrow-right" style="width:18px;height:18px;"></i>
+                        </button>
                     </div>
-                    <p>Empowering the next generation of global leaders through world-class technical education, innovative research, and an unwavering commitment to excellence.</p>
-                    <div class="footer-contact">
-                        <div class="contact-info-item">
-                            <div class="contact-icon-box"><i data-lucide="map-pin" style="width: 18px;"></i></div>
-                            <span class="contact-text">F2/A, Chandaka Industrial Estate, Bhubaneswar, Odisha, Pin: 751024, India</span>
-                        </div>
-                        <div class="contact-info-item">
-                            <div class="contact-icon-box"><i data-lucide="phone" style="width: 18px;"></i></div>
-                            <span class="contact-text">+91 98611 91195</span>
-                        </div>
-                        <div class="contact-info-item">
-                            <div class="contact-icon-box"><i data-lucide="mail" style="width: 18px;"></i></div>
-                            <span class="contact-text">info@trident.ac.in</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
-                    <h4>Academics</h4>
-                    <ul>
-                        <li><a href="#">Undergraduate Studies</a></li>
-                        <li><a href="#">Postgraduate Studies</a></li>
-                        <li><a href="#">Doctoral Programs</a></li>
-                        <li><a href="#">Research Centers</a></li>
-                        <li><a href="#">Academic Calendar</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
-                    <h4>Campus Life</h4>
-                    <ul>
-                        <li><a href="#">Student Hostels</a></li>
-                        <li><a href="#">Clubs & Societies</a></li>
-                        <li><a href="#">Sports & Recreation</a></li>
-                        <li><a href="#">Health & Wellness</a></li>
-                        <li><a href="#">Campus Safety</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="#">Admissions Portal</a></li>
-                        <li><a href="#">Alumni Network</a></li>
-                        <li><a href="#">Career Placements</a></li>
-                        <li><a href="#">NIRF Data</a></li>
-                        <li><a href="#">Tenders & Notices</a></li>
-                    </ul>
+                    <p class="newsletter-note">No spam. Only updates that matter.</p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <div class="copy">
-                    &copy; 2026 Trident Academy of Technology. All rights reserved.
+
+            <!-- Main Footer Grid -->
+            <div class="footer-main-grid">
+
+                <!-- Brand Column -->
+                <div class="footer-brand-col" data-aos="fade-right">
+                    <div class="footer-logo-row">
+                        <img src="https://site-generator-documents.s3.eu-north-1.amazonaws.com/TAT+Logoo.png" alt="TAT Logo" class="footer-logo-img">
+                        <div class="footer-logo-divider"></div>
+                        <div>
+                            <div class="footer-logo-name">Trident</div>
+                            <div class="footer-logo-sub">Academy of Technology</div>
+                        </div>
+                    </div>
+                    <p class="footer-brand-desc">Empowering the next generation of global leaders through world-class technical education, innovative research, and an unwavering commitment to excellence.</p>
+                    <div class="footer-contact-list">
+                        <a href="#contact" class="footer-contact-item">
+                            <div class="footer-icon-box"><i data-lucide="map-pin" style="width:20px;height:20px;"></i></div>
+                            <span>F2/A, Chandaka Industrial Estate,<br>In front of Infocity, Bhubaneswar,<br>Odisha, Pin: 751024, India</span>
+                        </a>
+                        <a href="tel:+919861191195" class="footer-contact-item">
+                            <div class="footer-icon-box"><i data-lucide="phone" style="width:20px;height:20px;"></i></div>
+                            <span>+91 98611 91195</span>
+                        </a>
+                        <a href="mailto:info@trident.ac.in" class="footer-contact-item">
+                            <div class="footer-icon-box"><i data-lucide="mail" style="width:20px;height:20px;"></i></div>
+                            <span>info@trident.ac.in</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Use</a>
+
+                <!-- Links Columns -->
+                <div class="footer-links-grid">
+
+                    <div class="footer-col-new" data-aos="fade-up" data-aos-delay="100">
+                        <div class="footer-col-heading-wrap">
+                            <div class="footer-col-heading-skew"></div>
+                            <h5 class="footer-col-heading">Academics</h5>
+                        </div>
+                        <ul class="footer-col-list">
+                            <li><a href="https://academics-tat.tekkzy.com/departments-of-engineering/" class="footer-link-new"><span class="footer-link-bar"></span>Undergraduate Studies</a></li>
+                            <li><a href="https://academics-tat.tekkzy.com/" class="footer-link-new"><span class="footer-link-bar"></span>Postgraduate Studies</a></li>
+                            <li><a href="https://academics-tat.tekkzy.com/" class="footer-link-new"><span class="footer-link-bar"></span>Doctoral Programs</a></li>
+                            <li><a href="https://research-tat.tekkzy.com/" class="footer-link-new"><span class="footer-link-bar"></span>Research Centers</a></li>
+                            <li><a href="https://academics-tat.tekkzy.com/" class="footer-link-new"><span class="footer-link-bar"></span>Academic Calendar</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col-new" data-aos="fade-up" data-aos-delay="200">
+                        <div class="footer-col-heading-wrap">
+                            <div class="footer-col-heading-skew"></div>
+                            <h5 class="footer-col-heading">Campus Life</h5>
+                        </div>
+                        <ul class="footer-col-list">
+                            <li><a href="https://campuslife-tat.tekkzy.com/" class="footer-link-new"><span class="footer-link-bar"></span>Student Hostels</a></li>
+                            <li><a href="https://activities-tat.tekkzy.com/" class="footer-link-new"><span class="footer-link-bar"></span>Clubs &amp; Societies</a></li>
+                            <li><a href="https://campuslife-tat.tekkzy.com/" class="footer-link-new"><span class="footer-link-bar"></span>Sports &amp; Recreation</a></li>
+                            <li><a href="https://campuslife-tat.tekkzy.com/" class="footer-link-new"><span class="footer-link-bar"></span>Health &amp; Wellness</a></li>
+                            <li><a href="https://campuslife-tat.tekkzy.com/" class="footer-link-new"><span class="footer-link-bar"></span>Campus Safety</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col-new" data-aos="fade-up" data-aos-delay="300">
+                        <div class="footer-col-heading-wrap">
+                            <div class="footer-col-heading-skew"></div>
+                            <h5 class="footer-col-heading">Resources</h5>
+                        </div>
+                        <ul class="footer-col-list">
+                            <li><a href="https://admissions-tat.tekkzy.com" class="footer-link-new"><span class="footer-link-bar"></span>Admissions Portal</a></li>
+                            <li><a href="https://alumni-tat.tekkzy.com/" class="footer-link-new"><span class="footer-link-bar"></span>Alumni Network</a></li>
+                            <li><a href="https://placements-tat.tekkzy.com" class="footer-link-new"><span class="footer-link-bar"></span>Career Placements</a></li>
+                            <li><a href="https://academics-tat.tekkzy.com/" class="footer-link-new"><span class="footer-link-bar"></span>NIRF Data</a></li>
+                            <li><a href="https://tat.tekkzy.com/" class="footer-link-new"><span class="footer-link-bar"></span>Tenders &amp; Notices</a></li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom-new">
+                <div class="footer-bottom-left">
+                    <span class="footer-copy">&copy; 2026 Trident Academy of Technology. All rights reserved.</span>
+                    <div class="footer-legal-links">
+                        <a href="https://tat.tekkzy.com/" class="footer-legal-link">Privacy Policy</a>
+                        <a href="https://tat.tekkzy.com/" class="footer-legal-link">Disclaimer</a>
+                        <a href="https://tat.tekkzy.com/" class="footer-legal-link">Terms of Use</a>
+                    </div>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://tat.tekkzy.com/" class="footer-social-link"><i data-lucide="facebook" style="width:20px;height:20px;"></i></a>
+                    <a href="https://tat.tekkzy.com/" class="footer-social-link"><i data-lucide="twitter" style="width:20px;height:20px;"></i></a>
+                    <a href="https://tat.tekkzy.com/" class="footer-social-link"><i data-lucide="linkedin" style="width:20px;height:20px;"></i></a>
+                    <a href="https://tat.tekkzy.com/" class="footer-social-link"><i data-lucide="instagram" style="width:20px;height:20px;"></i></a>
+                </div>
+            </div>
+
+            <!-- Tekkzy Credit -->
+            <div class="footer-credit">
+                Crafted with AI by <a href="https://tekkzy.com" class="footer-credit-link">Tekkzy</a> — AI-Powered Intelligent Cloud Solutions
+            </div>
+
         </div>
     </footer>
 
     <script>
         lucide.createIcons();
-        
-        // AOS Implementation
-        const observerOptions = {
-            threshold: 0.15
-        };
 
+        // ---- Scroll: shrink header & hide utility bar ----
+        const headerWrapper = document.getElementById('headerWrapper');
+        const utilityBar    = document.getElementById('utilityBar');
+        const mainHeader    = document.getElementById('mainHeader');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                utilityBar.classList.add('utility-hidden');
+                mainHeader.classList.add('header-scrolled');
+            } else {
+                utilityBar.classList.remove('utility-hidden');
+                mainHeader.classList.remove('header-scrolled');
+            }
+        });
+
+        // ---- Mobile menu toggle ----
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+        const menuIcon     = document.getElementById('menuIcon');
+        let mobileOpen = false;
+
+        mobileToggle.addEventListener('click', () => {
+            mobileOpen = !mobileOpen;
+            mobileDrawer.classList.toggle('drawer-open', mobileOpen);
+            // swap icon
+            menuIcon.setAttribute('data-lucide', mobileOpen ? 'x' : 'menu');
+            lucide.createIcons();
+        });
+
+        function closeMobileMenu() {
+            mobileOpen = false;
+            mobileDrawer.classList.remove('drawer-open');
+            menuIcon.setAttribute('data-lucide', 'menu');
+            lucide.createIcons();
+        }
+
+        // ---- AOS Implementation ----
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('active');
             });
-        }, observerOptions);
+        }, { threshold: 0.12 });
 
-        document.querySelectorAll('[data-aos]').forEach(el => {
-            observer.observe(el);
-        });
+        document.querySelectorAll('[data-aos]').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
