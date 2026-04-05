@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/playfairdisplay/v37/nuFvD-vYSZviVYUb_rj3ij__koJKkmOob-n7.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v8/L0xPDFytSnuF9beV7WncE6ngzc3SLo3W-6k.woff2) format('woff2');
+}
+
+:root {
+  --royal-blue: #2C3A8C;
+  --brand-gold: #A59381;
+  --soft-off-white: #FAF9F6;
+}
+
+body {
+  @apply bg-soft-off-white text-charcoal font-body leading-relaxed;
+}
+
+.gradient-text {
+  @apply bg-gradient-primary bg-clip-text text-transparent font-bold;
+}
+
+/* AOS-like custom animation triggers */
+.aos-fade-up {
+  @apply opacity-0 translate-y-10 transition-all duration-700 ease-out;
+}
+.aos-fade-up.active {
+  @apply opacity-100 translate-y-0;
+}
+
+.aos-zoom-in {
+  @apply opacity-0 scale-95 transition-all duration-700 ease-out;
+}
+.aos-zoom-in.active {
+  @apply opacity-100 scale-100;
+}
