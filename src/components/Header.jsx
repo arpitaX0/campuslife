@@ -14,13 +14,13 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Admissions', href: '#admissions' },
-    { name: 'Academics', href: '#academics' },
-    { name: 'Research', href: '#research' },
-    { name: 'Campus Life', href: '#campus' },
-    { name: 'Activities', href: '#activities' },
-    { name: 'Contact Us', href: '#contact' },
+    { name: 'About', href: 'https://about-tat.tekkzy.com/' },
+    { name: 'Admissions', href: 'https://admissions-tat.tekkzy.com/' },
+    { name: 'Academics', href: 'https://academics-tat.tekkzy.com/' },
+    { name: 'Research', href: 'https://research-tat.tekkzy.com/' },
+    { name: 'Campus Life', href: 'https://campuslife-tat.tekkzy.com/' },
+    { name: 'Activities', href: 'https://activities-tat.tekkzy.com/' },
+    { name: 'Contact Us', href: 'https://contactus-tat.tekkzy.com/' },
   ];
 
   return (
@@ -65,7 +65,7 @@ const Header = () => {
 
           {/* CTA */}
           <div className="hidden sm:block flex-shrink-0">
-            <a href="#admissions" className="inline-block bg-[#E63946] text-white text-[12px] font-bold uppercase tracking-[0.1em] px-7 py-3 rounded-md no-underline whitespace-nowrap transition-all shadow-[0_4px_18px_rgba(230,57,70,0.3)] hover:bg-[#c1121f] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(230,57,70,0.4)]">
+            <a href="https://apply-now.tekkzy.com/" className="inline-block bg-[#E63946] text-white text-[12px] font-bold uppercase tracking-[0.1em] px-7 py-3 rounded-md no-underline whitespace-nowrap transition-all shadow-[0_4px_18px_rgba(230,57,70,0.3)] hover:bg-[#c1121f] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(230,57,70,0.4)]">
               Apply Now
             </a>
           </div>
@@ -94,7 +94,7 @@ const Header = () => {
               </a>
             ))}
             <div className="pt-6 px-2 pb-2">
-              <a href="#admissions" className="block text-center bg-[#E63946] text-white text-[13px] font-extrabold uppercase tracking-[0.2em] px-6 py-4 rounded-xl no-underline shadow-[0_10px_30px_rgba(230,57,70,0.4)] hover:bg-[#c1121f] hover:-translate-y-0.5">
+              <a href="https://apply-now.tekkzy.com/" className="block text-center bg-[#E63946] text-white text-[13px] font-extrabold uppercase tracking-[0.2em] px-6 py-4 rounded-xl no-underline shadow-[0_10px_30px_rgba(230,57,70,0.4)] hover:bg-[#c1121f] hover:-translate-y-0.5">
                 START APPLICATION
               </a>
             </div>
