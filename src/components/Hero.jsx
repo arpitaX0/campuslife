@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const Hero = () => {
   return (
     <section className="min-h-screen flex items-center pt-[160px] pb-24 overflow-hidden relative">
-      <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 grid lg:grid-cols-2 gap-20 items-center">
         
         {/* Hero Content */}
         <motion.div 
@@ -14,10 +14,14 @@ const Hero = () => {
           viewport={{ once: true }}
           className="relative z-10"
         >
-          <h1 className="font-heading text-5xl md:text-7xl lg:text-[4.5rem] leading-[1.1] mb-6 text-charcoal">
-            Engineering the <br />
-            <span className="bg-gradient-primary bg-clip-text text-transparent font-bold">
-              Future of <br /> Technical Mastery
+          <h1 className="font-heading text-5xl md:text-7xl lg:text-[4.5rem] leading-[1.1] mb-10 text-charcoal">
+            <span className="relative inline-block">
+              <span className="relative z-10">Engineering the <br /></span>
+              <span className="bg-gradient-primary bg-clip-text text-transparent font-bold relative z-10">
+                Future of <br /> Technical Mastery
+              </span>
+              <div className="absolute bottom-2 left-0 w-full h-8 bg-royal-blue/5 -z-10"></div>
+              <div className="absolute bottom-0 left-0 w-full h-[3px] bg-royal-blue/30"></div>
             </span>
           </h1>
           <p className="text-[1.25rem] font-light text-charcoal/80 mb-10 max-w-[480px] leading-relaxed">

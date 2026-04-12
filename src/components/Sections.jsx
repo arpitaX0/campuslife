@@ -5,15 +5,19 @@ import { Award, Globe, Zap, Shield, ArrowRight } from 'lucide-react';
 // --- Research Section ---
 export const Research = () => (
   <section className="py-24" id="research">
-    <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+    <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 grid lg:grid-cols-2 gap-20 items-center">
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <h2 className="font-heading text-5xl mb-6 text-charcoal">
-          Architecting the <br />
-          <span className="bg-gradient-primary bg-clip-text text-transparent font-bold">Next Frontier</span>
+        <h2 className="font-heading text-5xl mb-8 text-charcoal">
+          <span className="relative inline-block">
+            <span className="relative z-10">Architecting the <br /></span>
+            <span className="bg-gradient-primary bg-clip-text text-transparent font-bold relative z-10">Next Frontier</span>
+            <div className="absolute bottom-1 left-0 w-full h-4 bg-royal-blue/5 -z-10"></div>
+            <div className="absolute bottom-0 left-0 w-full h-[2px] bg-royal-blue/20"></div>
+          </span>
         </h2>
         <p className="text-lg font-light text-charcoal/70 mb-8 max-w-lg leading-relaxed">
           Our research laboratories are the heart of Trident Academy, where Modern University Campus initiatives meet the rigors of breakthrough discovery.
@@ -60,9 +64,15 @@ const StoryCard = ({ name, role, img, delay }) => (
 // --- Stories Section ---
 export const Stories = () => (
   <section className="py-24 bg-soft-off-white" id="about">
-    <div className="container mx-auto px-6">
+    <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24">
       <div className="text-center mb-16">
-        <h2 className="font-heading text-5xl mb-4 text-royal-blue">The Trident Journey</h2>
+        <h2 className="font-heading text-5xl mb-6 text-royal-blue">
+          <span className="relative inline-block">
+            <span className="relative z-10">The Trident Journey</span>
+            <div className="absolute bottom-1 left-0 w-full h-4 bg-royal-blue/5 -z-10"></div>
+            <div className="absolute bottom-0 left-0 w-full h-[2px] bg-royal-blue/20"></div>
+          </span>
+        </h2>
         <p className="text-charcoal/70 text-lg">Hear from the next generation of academic pioneers.</p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -78,7 +88,7 @@ export const Stories = () => (
 // --- Stats Section ---
 export const Stats = () => (
   <section className="py-24 bg-navy-block border-t border-white/10 text-center">
-    <div className="container mx-auto px-6 flex flex-wrap justify-around gap-12">
+    <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 flex flex-wrap justify-around gap-12">
       {[
         { label: 'Innovation Rank', val: '#1' },
         { label: 'Tech Partners', val: '2.5k+' },
@@ -96,9 +106,15 @@ export const Stats = () => (
 // --- Campus Section ---
 export const Campus = () => (
     <section className="py-24" id="campus">
-      <div className="container mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24">
         <div className="mb-16">
-          <h2 className="font-heading text-5xl mb-4 bg-gradient-primary bg-clip-text text-transparent font-bold">Institutional Sanctum</h2>
+          <h2 className="font-heading text-5xl mb-6 text-charcoal">
+            <span className="relative inline-block">
+              <span className="bg-gradient-primary bg-clip-text text-transparent font-bold relative z-10">Institutional Sanctum</span>
+              <div className="absolute bottom-1 left-0 w-full h-4 bg-royal-blue/5 -z-10"></div>
+              <div className="absolute bottom-0 left-0 w-full h-[2px] bg-royal-blue/20"></div>
+            </span>
+          </h2>
           <p className="text-charcoal/70 text-lg">Designed for holistic development and unparalleled technical focus.</p>
         </div>
         <div className="grid md:grid-cols-2 gap-10">
@@ -122,8 +138,14 @@ export const Campus = () => (
 // --- Impact Section ---
 export const Impact = () => (
   <section className="py-24 bg-navy-block border-t border-white/10 text-white text-center">
-    <div className="container mx-auto px-6">
-      <h2 className="font-heading text-5xl mb-20 bg-gradient-primary bg-clip-text text-transparent font-bold">Global Impact 2026</h2>
+    <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24">
+      <h2 className="font-heading text-5xl mb-20 text-white">
+        <span className="relative inline-block">
+          <span className="bg-gradient-primary bg-clip-text text-transparent font-bold relative z-10">Global Impact 2026</span>
+          <div className="absolute bottom-1 left-0 w-full h-4 bg-white/5 -z-10"></div>
+          <div className="absolute bottom-0 left-0 w-full h-[2px] bg-white/20"></div>
+        </span>
+      </h2>
       <div className="grid grid-cols-2 lg:grid-cols-4">
         {[
           { icon: Award, val: '240+', label: 'Tech Awards' },
@@ -145,9 +167,15 @@ export const Impact = () => (
 // --- Faculty Section ---
 export const Faculty = () => (
   <section className="py-24 text-center" id="faculty">
-    <div className="container mx-auto px-6">
+    <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24">
       <div className="mb-16">
-        <h2 className="font-heading text-5xl mb-4 bg-gradient-primary bg-clip-text text-transparent font-bold">Voices of Excellence</h2>
+        <h2 className="font-heading text-5xl mb-6 text-charcoal">
+          <span className="relative inline-block">
+            <span className="bg-gradient-primary bg-clip-text text-transparent font-bold relative z-10">Voices of Excellence</span>
+            <div className="absolute bottom-1 left-0 w-full h-4 bg-royal-blue/5 -z-10"></div>
+            <div className="absolute bottom-0 left-0 w-full h-[2px] bg-royal-blue/20"></div>
+          </span>
+        </h2>
         <p className="text-charcoal/70 text-lg">Mentorship from the industry's most distinguished technical leaders.</p>
       </div>
       <div className="grid md:grid-cols-3 gap-12">
@@ -172,7 +200,7 @@ export const Faculty = () => (
 // --- Quote Section ---
 export const Quote = () => (
     <section className="py-24 text-center overflow-hidden">
-      <div className="container mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24">
         <motion.div initial={{ scale: 0.9, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: true }}>
           <h3 className="font-heading text-3xl md:text-5xl italic leading-tight mb-8 bg-gradient-primary bg-clip-text text-transparent max-w-5xl mx-auto">
             "Excellence is not a singular act, but a lineage of intentional masteries."
@@ -187,10 +215,16 @@ export const Quote = () => (
 // --- CTA Section ---
 export const CTA = () => (
   <section className="py-24 bg-soft-off-white" id="admissions">
-    <div className="container mx-auto px-6">
+    <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24">
       <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="bg-white rounded-lg p-12 md:p-20 text-center shadow-2xl relative overflow-hidden">
         <div className="relative z-10">
-          <h2 className="font-heading text-4xl md:text-5xl mb-6 text-charcoal">Join the Global Standard</h2>
+          <h2 className="font-heading text-4xl md:text-5xl mb-8 text-charcoal">
+            <span className="relative inline-block">
+              <span className="relative z-10">Join the Global Standard</span>
+              <div className="absolute bottom-1 left-0 w-full h-4 bg-royal-blue/5 -z-10"></div>
+              <div className="absolute bottom-0 left-0 w-full h-[2px] bg-royal-blue/20"></div>
+            </span>
+          </h2>
           <p className="text-charcoal/70 text-lg mb-10 max-w-2xl mx-auto">
             Admissions for the 2026 Academic Season are now open. Secure your place at the forefront of the technological revolution.
           </p>

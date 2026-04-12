@@ -10,9 +10,15 @@ const News = () => {
 
   return (
     <section className="bg-navy-block text-white py-24">
-      <div className="container mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24">
         <div className="flex flex-col mb-16 max-w-2xl">
-          <h2 className="font-heading text-5xl mb-4 bg-gradient-primary bg-clip-text text-transparent font-bold">Institutional Highlights</h2>
+          <h2 className="font-heading text-5xl mb-6 text-white">
+            <span className="relative inline-block">
+              <span className="bg-gradient-primary bg-clip-text text-transparent font-bold relative z-10">Institutional Highlights</span>
+              <div className="absolute bottom-1 left-0 w-full h-4 bg-white/5 -z-10"></div>
+              <div className="absolute bottom-0 left-0 w-full h-[2px] bg-white/20"></div>
+            </span>
+          </h2>
           <p className="text-white/70 text-lg">Current initiatives driving global technological impact.</p>
         </div>
 
