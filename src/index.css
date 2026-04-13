@@ -11,21 +11,23 @@
 }
 
 @font-face {
-  font-family: 'Plus Jakarta Sans';
+  font-family: 'Montserrat';
   font-style: normal;
-  font-weight: 300 900;
+  font-weight: 100 900;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/plusjakartasans/v8/L0xPDFytSnuF9beV7WncE6ngzc3SLo3W-6k.woff2) format('woff2');
+  src: url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm4df9GRpuTI6p7ZSQ.woff2) format('woff2');
 }
 
 :root {
-  --royal-blue: #2C3A8C;
-  --brand-gold: #A59381;
+  --royal-blue: #253386;
+  --brand-gold: #E5AA3E;
   --soft-off-white: #FAF9F6;
+  --charcoal: #111111;
 }
 
 body {
-  @apply bg-soft-off-white text-charcoal font-body leading-relaxed;
+  @apply bg-soft-off-white text-charcoal font-sans leading-relaxed;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .gradient-text {
@@ -47,54 +49,11 @@ body {
   @apply opacity-100 scale-100;
 }
 
-/* Footer styles - Image Match Design tat.tekkzy.com */
-.footer-dark {
-  background: #0d0d0d;
-}
-.newsletter-card {
-  @apply relative p-12 rounded-2xl flex flex-col lg:flex-row items-center justify-between gap-8 mb-20;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-left: 8px solid #E56D24;
-}
-.newsletter-title {
-  @apply font-display font-bold text-4xl text-white mb-3;
-}
-.newsletter-input {
-  @apply flex-1 bg-white/5 border border-white/10 rounded-lg px-6 py-4 text-white placeholder-white/20 focus:outline-none focus:border-white/20 transition-all;
-}
-.newsletter-btn {
-  @apply bg-brand-orange text-black font-bold uppercase tracking-widest px-10 py-4 rounded-lg flex items-center gap-2 hover:opacity-90 transition-opacity;
+/* Typography utilities */
+.font-display {
+  font-family: 'Playfair Display', serif;
 }
 
-.footer-heading {
-  @apply font-display font-bold text-sm tracking-[0.2em] uppercase text-white mb-8 border-b border-white/5 pb-2 inline-block;
-}
-
-.footer-link {
-  @apply flex items-center gap-2 text-sm transition-all duration-300;
-  color: rgba(255, 255, 255, 0.4);
-}
-.footer-link:hover { color: #ffffff; }
-
-.footer-contact-row {
-  @apply flex items-start gap-4 text-sm transition-colors duration-300;
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.footer-contact-square {
-  @apply w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 text-lg;
-  background: rgba(255, 255, 255, 0.03);
-  color: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.footer-social-link {
-  @apply w-9 h-9 rounded-full flex items-center justify-center text-lg transition-all duration-300;
-  color: rgba(255, 255, 255, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.footer-social-link:hover {
-  color: #ffffff;
-  border-color: #ffffff;
+.font-body {
+  font-family: 'Montserrat', sans-serif;
 }
