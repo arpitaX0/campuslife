@@ -27,10 +27,10 @@ const Header = () => {
       {/* ─── Top Utility Bar ─── */}
       <div className={`bg-[#253386] transition-all duration-500 overflow-hidden relative z-[20] ${isScrolled ? 'max-h-0 opacity-0' : 'max-h-[40px] opacity-100'}`}>
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 py-2.5 flex justify-between items-center">
-          <div className="flex items-center gap-2 text-[11px] font-semibold text-white/90 uppercase tracking-[0.12em]">
-            <span>Affiliated to BPUT</span>
-            <span className="opacity-30">|</span>
-            <span>NAAC 'A' Accredited</span>
+          <div className="flex items-center gap-2 text-[11px] font-bold text-white uppercase tracking-[0.15em]">
+            <span>AFFILIATED TO BPUT</span>
+            <span className="opacity-40 font-normal px-1">|</span>
+            <span>NAAC 'A' ACCREDITED</span>
           </div>
           <div className="flex items-center gap-6">
             <a href="https://alumni-tat.tekkzy.com/" className="flex items-center gap-2 text-[11px] font-semibold text-white/90 uppercase tracking-[0.12em] hover:text-white transition-colors">
@@ -51,15 +51,16 @@ const Header = () => {
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 flex items-center justify-between">
           
           {/* Logo Branding */}
-          <a href="https://tat.tekkzy.com/" className="flex items-center gap-4 no-underline group">
+          <a href="https://tat.tekkzy.com/" className="flex items-center gap-3 no-underline group">
             <img 
               src="https://site-generator-documents.s3.eu-north-1.amazonaws.com/TAT+Logoo.png" 
               alt="TAT Logo" 
-              className={`object-contain transition-all duration-500 ${isScrolled ? 'w-11 h-11' : 'w-14 h-14'}`} 
+              className={`object-contain transition-all duration-500 ${isScrolled ? 'w-12 h-12' : 'w-14 h-14'}`} 
             />
-            <div className="flex flex-col justify-center">
-              <div className="text-[26px] font-black text-[#111111] leading-none tracking-tight uppercase font-sans">Trident</div>
-              <div className="text-[10px] font-bold text-[#253386] tracking-[0.25em] uppercase leading-none mt-1.5 opacity-80">Academy of Technology</div>
+            <div className="flex flex-col justify-center mt-1">
+              <div className="text-[26px] font-black text-[#222] leading-[0.9] tracking-[0.02em] uppercase font-sans">TRIDENT</div>
+              <div className="h-[1.5px] w-[115%] bg-[#253386] my-1 opacity-90"></div>
+              <div className="text-[9.5px] font-bold text-[#253386] tracking-[0.2em] uppercase leading-none">ACADEMY OF TECHNOLOGY</div>
             </div>
           </a>
 
@@ -77,12 +78,12 @@ const Header = () => {
                   <li key={link.name}>
                     <a 
                       href={link.href} 
-                      className={`text-[13.5px] font-extrabold uppercase tracking-[0.14em] whitespace-nowrap transition-all duration-300 relative group py-2 flex items-center ${
-                        isActive ? 'text-[#111111]' : 'text-[#3E3A36]/60 hover:text-[#111111]'
+                      className={`text-[13px] font-bold uppercase tracking-[0.1em] whitespace-nowrap transition-all duration-300 relative group py-2 flex items-center ${
+                        isActive ? 'text-[#253386]' : 'text-[#3E3A36] hover:text-[#253386]'
                       }`}
                     >
                       {link.name}
-                      <span className={`absolute -bottom-1 left-0 h-[2.5px] bg-[#253386] transition-all duration-300 ${
+                      <span className={`absolute -bottom-1 left-0 h-[2px] bg-[#253386] transition-all duration-300 ${
                         isActive ? 'w-full opacity-100' : 'w-0 opacity-0 group-hover:w-full group-hover:opacity-100'
                       }`}></span>
                     </a>
@@ -93,12 +94,12 @@ const Header = () => {
           </nav>
 
           {/* Action Button */}
-          <div className="hidden sm:block">
+          <div className="hidden sm:block ml-4">
             <a 
               href="https://apply-now.tekkzy.com/" 
-              className="inline-block bg-[#E63946] text-white text-[12px] font-bold uppercase tracking-[0.15em] px-8 py-3.5 rounded-sm shadow-[0_8px_20px_rgba(230,57,70,0.25)] hover:bg-[#c1121f] transition-all transform hover:-translate-y-0.5 active:scale-95"
+              className="inline-block bg-[#ED3237] text-white text-[13px] font-bold uppercase tracking-[0.1em] px-7 py-2.5 rounded-sm shadow-sm hover:bg-[#D12B2F] transition-all transform hover:-translate-y-[1px] active:scale-95"
             >
-              Apply Now
+              APPLY NOW
             </a>
           </div>
 
