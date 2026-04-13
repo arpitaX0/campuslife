@@ -20,8 +20,6 @@ const Hero = () => {
               <span className="bg-gradient-primary bg-clip-text text-transparent font-bold relative z-10">
                 Future of <br /> Technical Mastery
               </span>
-              <div className="absolute bottom-2 left-0 w-full h-8 bg-royal-blue/5 -z-10"></div>
-              <div className="absolute bottom-0 left-0 w-full h-[3px] bg-royal-blue/30"></div>
             </span>
           </h1>
           <p className="text-[1.25rem] font-light text-charcoal/80 mb-10 max-w-[480px] leading-relaxed">

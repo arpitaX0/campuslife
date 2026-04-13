@@ -57,3 +57,7 @@ body {
 .font-body {
   font-family: 'Montserrat', sans-serif;
 }
+
+.serif {
+  font-family: 'Playfair Display', serif;
+}

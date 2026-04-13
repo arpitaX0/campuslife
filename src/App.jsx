@@ -5,8 +5,8 @@ import News from './components/News';
 import { 
   Research, 
   Stories, 
-  Stats, 
   Campus, 
+  Facilities,
   Impact, 
   Faculty, 
   Quote, 
@@ -22,8 +22,8 @@ function App() {
         <Hero />
         <News />
         <Research />
+        <Facilities />
         <Stories />
-        <Stats />
         <Campus />
         <Impact />
         <Faculty />

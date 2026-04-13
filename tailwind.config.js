@@ -16,6 +16,8 @@ export default {
         'brand-accent': '#d83b9d',
         'violet': '#5a5af3',
         'brand-orange': '#E56D24',
+        'brand-yellow': '#E5AA3E',
+        'soft': 'rgba(37, 51, 134, 0.05)',
       },
       fontFamily: {
         heading: ['Playfair Display', 'serif'],

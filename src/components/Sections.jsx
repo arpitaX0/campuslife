@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Award, Globe, Zap, Shield, ArrowRight } from 'lucide-react';
+import { Award, Globe, Zap, Shield, ArrowRight, Building, Home, Bus, Utensils, HeartPulse, Wifi, Monitor, GraduationCap } from 'lucide-react';
 
 // --- Research Section ---
 export const Research = () => (
@@ -15,8 +15,6 @@ export const Research = () => (
           <span className="relative inline-block">
             <span className="relative z-10">Architecting the <br /></span>
             <span className="bg-gradient-primary bg-clip-text text-transparent font-bold relative z-10">Next Frontier</span>
-            <div className="absolute bottom-1 left-0 w-full h-4 bg-royal-blue/5 -z-10"></div>
-            <div className="absolute bottom-0 left-0 w-full h-[2px] bg-royal-blue/20"></div>
           </span>
         </h2>
         <p className="text-lg font-light text-charcoal/70 mb-8 max-w-lg leading-relaxed">
@@ -69,8 +67,6 @@ export const Stories = () => (
         <h2 className="font-heading text-5xl mb-6 text-royal-blue">
           <span className="relative inline-block">
             <span className="relative z-10">The Trident Journey</span>
-            <div className="absolute bottom-1 left-0 w-full h-4 bg-royal-blue/5 -z-10"></div>
-            <div className="absolute bottom-0 left-0 w-full h-[2px] bg-royal-blue/20"></div>
           </span>
         </h2>
         <p className="text-charcoal/70 text-lg">Hear from the next generation of academic pioneers.</p>
@@ -85,20 +81,112 @@ export const Stories = () => (
   </section>
 );
 
-// --- Stats Section ---
-export const Stats = () => (
-  <section className="py-24 bg-navy-block border-t border-white/10 text-center">
-    <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 flex flex-wrap justify-around gap-12">
-      {[
-        { label: 'Innovation Rank', val: '#1' },
-        { label: 'Tech Partners', val: '2.5k+' },
-        { label: 'Global Placement', val: '98%' }
-      ].map((stat, idx) => (
-        <motion.div key={idx} initial={{ scale: 0.9, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} transition={{ delay: idx * 0.2 }} viewport={{ once: true }}>
-          <span className="block text-7xl font-heading font-black bg-gradient-primary bg-clip-text text-transparent mb-2">{stat.val}</span>
-          <span className="text-white/80 uppercase tracking-widest text-sm font-semibold">{stat.label}</span>
-        </motion.div>
-      ))}
+
+
+
+// --- Facilities Section ---
+const FacilityCard = ({ icon: Icon, title, desc, img, delay }) => (
+  <motion.div 
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ delay }}
+    viewport={{ once: true }}
+    className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 group overflow-hidden"
+  >
+    <div className="relative h-56 overflow-hidden">
+      <img 
+        src={img} 
+        alt={title} 
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy-block/60 to-transparent"></div>
+      <div className="absolute bottom-4 left-6 w-12 h-12 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center text-white border border-white/20">
+        <Icon size={24} />
+      </div>
+    </div>
+    <div className="p-8">
+      <h4 className="font-heading text-xl text-royal-blue mb-3 group-hover:text-brand-accent transition-colors">{title}</h4>
+      <p className="text-charcoal/60 text-sm leading-relaxed">{desc}</p>
+    </div>
+  </motion.div>
+);
+
+export const Facilities = () => (
+  <section className="py-24 bg-soft-off-white" id="facilities">
+    <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24">
+      <div className="text-center mb-16">
+        <h2 className="font-heading text-5xl mb-6 text-charcoal">
+          <span className="relative inline-block">
+            <span className="relative z-10">World-Class Facilities</span>
+          </span>
+        </h2>
+        <p className="text-charcoal/70 text-lg max-w-2xl mx-auto">Providing a sustainable and empowering environment for advanced engineering education and holistic growth.</p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <FacilityCard 
+          icon={Building} 
+          title="Modern Infrastructure" 
+          desc="AICTE-standard classrooms and state-of-the-art laboratories designed for immersive learning." 
+          img="/facilities/modern_infrastructure.png"
+          delay={0.1} 
+        />
+        <FacilityCard 
+          icon={Home} 
+          title="Premium Hostels" 
+          desc="In-campus safe residence with a capacity of 1200+ inmates and modern amenities." 
+          img="/facilities/premium_hostels.png"
+          delay={0.2} 
+        />
+        <FacilityCard 
+          icon={Bus} 
+          title="Safe Transport" 
+          desc="Extensive fleet of buses ensuring reliable commute for students and staff across the city." 
+          img="/facilities/safe_transport.png"
+          delay={0.3} 
+        />
+        <FacilityCard 
+          icon={Utensils} 
+          title="Food Centers" 
+          desc="Nutritious and hygienic dining options with multi-cuisine cafeterias on campus." 
+          img="/facilities/food_centers.png"
+          delay={0.4} 
+        />
+        <FacilityCard 
+          icon={HeartPulse} 
+          title="Healthcare" 
+          desc="Dedicated health center with professional medical staff and emergency support systems." 
+          img="/facilities/healthcare.png"
+          delay={0.5} 
+        />
+        <FacilityCard 
+          icon={Wifi} 
+          title="Campus WiFi" 
+          desc="High-speed internet connectivity across all institutional blocks and common areas." 
+          img="/facilities/campus_wifi.png"
+          delay={0.6} 
+        />
+        <FacilityCard 
+          icon={Shield} 
+          title="Security & Safety" 
+          desc="24/7 campus surveillance and professional security personnel for a safe environment." 
+          img="/facilities/security_safety.png"
+          delay={0.7} 
+        />
+        <FacilityCard 
+          icon={GraduationCap} 
+          title="Scholarships" 
+          desc="Comprehensive support systems including loans and merit-based institutional scholarships." 
+          img="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800"
+          delay={0.8} 
+        />
+        <FacilityCard 
+          icon={Monitor} 
+          title="ICT Classrooms" 
+          desc="Digital-first learning environments equipped with modern audio-visual and smart tools." 
+          img="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800"
+          delay={0.9} 
+        />
+      </div>
     </div>
   </section>
 );
@@ -111,8 +199,6 @@ export const Campus = () => (
           <h2 className="font-heading text-5xl mb-6 text-charcoal">
             <span className="relative inline-block">
               <span className="bg-gradient-primary bg-clip-text text-transparent font-bold relative z-10">Institutional Sanctum</span>
-              <div className="absolute bottom-1 left-0 w-full h-4 bg-royal-blue/5 -z-10"></div>
-              <div className="absolute bottom-0 left-0 w-full h-[2px] bg-royal-blue/20"></div>
             </span>
           </h2>
           <p className="text-charcoal/70 text-lg">Designed for holistic development and unparalleled technical focus.</p>
@@ -142,15 +228,13 @@ export const Impact = () => (
       <h2 className="font-heading text-5xl mb-20 text-white">
         <span className="relative inline-block">
           <span className="bg-gradient-primary bg-clip-text text-transparent font-bold relative z-10">Global Impact 2026</span>
-          <div className="absolute bottom-1 left-0 w-full h-4 bg-white/5 -z-10"></div>
-          <div className="absolute bottom-0 left-0 w-full h-[2px] bg-white/20"></div>
         </span>
       </h2>
       <div className="grid grid-cols-2 lg:grid-cols-4">
         {[
           { icon: Award, val: '240+', label: 'Tech Awards' },
           { icon: Globe, val: '45k+', label: 'Elite Alumni' },
-          { icon: Zap, val: '$2B+', label: 'Funded Research' },
+          { icon: Zap, val: '₹2B+', label: 'Funded Research' },
           { icon: Shield, val: '200+', label: 'Faculty Leads' }
         ].map((item, idx) => (
           <motion.div key={idx} initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: idx * 0.1 }} viewport={{ once: true }} className="p-10 border-r border-white/10 last:border-r-0 relative group hover:bg-white/5 transition-all">
@@ -172,8 +256,6 @@ export const Faculty = () => (
         <h2 className="font-heading text-5xl mb-6 text-charcoal">
           <span className="relative inline-block">
             <span className="bg-gradient-primary bg-clip-text text-transparent font-bold relative z-10">Voices of Excellence</span>
-            <div className="absolute bottom-1 left-0 w-full h-4 bg-royal-blue/5 -z-10"></div>
-            <div className="absolute bottom-0 left-0 w-full h-[2px] bg-royal-blue/20"></div>
           </span>
         </h2>
         <p className="text-charcoal/70 text-lg">Mentorship from the industry's most distinguished technical leaders.</p>
@@ -221,8 +303,6 @@ export const CTA = () => (
           <h2 className="font-heading text-4xl md:text-5xl mb-8 text-charcoal">
             <span className="relative inline-block">
               <span className="relative z-10">Join the Global Standard</span>
-              <div className="absolute bottom-1 left-0 w-full h-4 bg-royal-blue/5 -z-10"></div>
-              <div className="absolute bottom-0 left-0 w-full h-[2px] bg-royal-blue/20"></div>
             </span>
           </h2>
           <p className="text-charcoal/70 text-lg mb-10 max-w-2xl mx-auto">
