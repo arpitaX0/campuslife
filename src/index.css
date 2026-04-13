@@ -46,3 +46,55 @@ body {
 .aos-zoom-in.active {
   @apply opacity-100 scale-100;
 }
+
+/* Footer styles - Image Match Design tat.tekkzy.com */
+.footer-dark {
+  background: #0d0d0d;
+}
+.newsletter-card {
+  @apply relative p-12 rounded-2xl flex flex-col lg:flex-row items-center justify-between gap-8 mb-20;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 8px solid #E56D24;
+}
+.newsletter-title {
+  @apply font-display font-bold text-4xl text-white mb-3;
+}
+.newsletter-input {
+  @apply flex-1 bg-white/5 border border-white/10 rounded-lg px-6 py-4 text-white placeholder-white/20 focus:outline-none focus:border-white/20 transition-all;
+}
+.newsletter-btn {
+  @apply bg-brand-orange text-black font-bold uppercase tracking-widest px-10 py-4 rounded-lg flex items-center gap-2 hover:opacity-90 transition-opacity;
+}
+
+.footer-heading {
+  @apply font-display font-bold text-sm tracking-[0.2em] uppercase text-white mb-8 border-b border-white/5 pb-2 inline-block;
+}
+
+.footer-link {
+  @apply flex items-center gap-2 text-sm transition-all duration-300;
+  color: rgba(255, 255, 255, 0.4);
+}
+.footer-link:hover { color: #ffffff; }
+
+.footer-contact-row {
+  @apply flex items-start gap-4 text-sm transition-colors duration-300;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-contact-square {
+  @apply w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 text-lg;
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-social-link {
+  @apply w-9 h-9 rounded-full flex items-center justify-center text-lg transition-all duration-300;
+  color: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer-social-link:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+}

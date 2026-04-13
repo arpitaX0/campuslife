@@ -15,11 +15,14 @@ export default {
         'navy-block': '#070B2B',
         'brand-accent': '#d83b9d',
         'violet': '#5a5af3',
+        'brand-orange': '#E56D24',
       },
       fontFamily: {
         heading: ['Playfair Display', 'serif'],
         body: ['Playfair Display', 'serif'],
         jakarta: ['Plus Jakarta Sans', 'sans-serif'],
+        display: ['Playfair Display', 'serif'],
+        inter: ['Plus Jakarta Sans', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-primary': 'linear-gradient(135deg, #d83b9d 0%, #a259ff 50%, #5a5af3 100%)',
