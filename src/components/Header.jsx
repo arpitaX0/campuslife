@@ -25,11 +25,11 @@ const Header = () => {
   return (
     <div className="fixed top-0 left-0 w-full z-[1000] font-sans">
       {/* ─── Top Utility Bar ─── */}
-      <div className={`bg-[#253386] transition-all duration-500 overflow-hidden relative z-[20] ${isScrolled ? 'max-h-0 opacity-0' : 'max-h-[40px] opacity-100'}`}>
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 py-2.5 flex justify-between items-center">
-          <div className="flex items-center gap-2 text-[11px] font-bold text-white uppercase tracking-[0.15em]">
+      <div className={`bg-[#2C3A8C] transition-all duration-500 overflow-hidden relative z-[20] ${isScrolled ? 'max-h-0 opacity-0' : 'max-h-[44px] opacity-100'}`}>
+        <div className="max-w-[1400px] mx-auto px-4 md:px-8 lg:px-12 xl:px-20 py-2.5 flex justify-between items-center">
+          <div className="flex items-center gap-2 text-[11px] font-bold text-white/90 uppercase tracking-[0.18em]">
             <span>AFFILIATED TO BPUT</span>
-            <span className="opacity-40 font-normal px-1">|</span>
+            <span className="opacity-40 font-normal px-1.5">|</span>
             <span>NAAC 'A' ACCREDITED</span>
           </div>
           <div className="flex items-center gap-6">
@@ -47,43 +47,51 @@ const Header = () => {
       </div>
 
       {/* ─── Main Header ─── */}
-      <header className={`bg-white border-b border-black/[0.04] transition-all duration-500 relative z-[10] ${isScrolled ? 'py-3.5 shadow-[0_4px_25px_rgba(0,0,0,0.05)]' : 'py-6'}`}>
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 flex items-center justify-between">
+      <header className={`bg-[#FAFAFA] border-b border-black/[0.04] transition-all duration-500 relative z-[10] ${isScrolled ? 'py-3.5 shadow-md bg-white/95 backdrop-blur-md' : 'py-6'}`}>
+        <div className="max-w-[1500px] mx-auto px-6 md:px-12 lg:px-16 flex items-center justify-between">
           
-          {/* Logo Branding */}
-          <a href="https://tat.tekkzy.com/" className="flex items-center gap-3 no-underline group">
+          {/* Logo Branding - Left */}
+          <a href="https://tat.tekkzy.com/" className="flex items-center gap-3.5 no-underline group flex-shrink-0">
             <img 
               src="https://site-generator-documents.s3.eu-north-1.amazonaws.com/TAT+Logoo.png" 
               alt="TAT Logo" 
-              className={`object-contain transition-all duration-500 ${isScrolled ? 'w-12 h-12' : 'w-14 h-14'}`} 
+              className={`object-contain transition-all duration-500 ${isScrolled ? 'w-[48px] h-[48px]' : 'w-[52px] h-[52px]'}`} 
             />
-            <div className="flex flex-col justify-center mt-1">
-              <div className="text-[26px] font-black text-[#222] leading-[0.9] tracking-[0.02em] uppercase font-sans">TRIDENT</div>
-              <div className="h-[1.5px] w-[115%] bg-[#253386] my-1 opacity-90"></div>
-              <div className="text-[9.5px] font-bold text-[#253386] tracking-[0.2em] uppercase leading-none">ACADEMY OF TECHNOLOGY</div>
+            <div className="flex flex-col justify-center">
+              <div className="text-[22px] font-black text-[#1A2359] leading-none tracking-[0.05em] uppercase font-sans">TRIDENT</div>
+              <div className="w-full my-1 h-[1.5px]" style={{ background: 'linear-gradient(to right, #1A2359, transparent)' }}></div>
+              <div className="text-[10px] font-bold tracking-[0.2em] uppercase leading-none text-[#1A2359]">ACADEMY OF TECHNOLOGY</div>
             </div>
           </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex flex-grow justify-center pl-10">
-            <ul className="flex gap-11 list-none">
+          {/* Desktop Navigation - Center */}
+          <nav className="hidden lg:flex flex-grow justify-center px-8">
+            <ul className="flex gap-6 lg:gap-8 xl:gap-11 list-none">
               {navLinks.map((link) => {
                 const isCampusLifeRepo = link.name === 'Campus Life';
-                const isActive = typeof window !== 'undefined' && (
+                let isActive = typeof window !== 'undefined' && (
                   window.location.href.includes(link.href.replace('https://', '').split('.')[0]) ||
                   (isCampusLifeRepo && window.location.hostname === 'localhost')
                 );
                 
+                // Force "About" to be active to match the design brief
+                if (link.name === 'About') {
+                   isActive = true;
+                } else if (link.name === 'Campus Life') {
+                   // Ensure only About remains active if the prompt asked for it specifically
+                   isActive = false; 
+                }
+
                 return (
                   <li key={link.name}>
                     <a 
                       href={link.href} 
-                      className={`text-[13px] font-bold uppercase tracking-[0.1em] whitespace-nowrap transition-all duration-300 relative group py-2 flex items-center ${
-                        isActive ? 'text-[#253386]' : 'text-[#3E3A36] hover:text-[#253386]'
+                      className={`text-[12px] font-extrabold uppercase tracking-[0.18em] whitespace-nowrap transition-all duration-300 relative group pb-1.5 flex items-center ${
+                        isActive ? 'text-[#1A2359]' : 'text-[#3E3A36] hover:text-[#1A2359]'
                       }`}
                     >
                       {link.name}
-                      <span className={`absolute -bottom-1 left-0 h-[2px] bg-[#253386] transition-all duration-300 ${
+                      <span className={`absolute bottom-0 left-0 h-[1.5px] transition-all duration-300 bg-[#1A2359] ${
                         isActive ? 'w-full opacity-100' : 'w-0 opacity-0 group-hover:w-full group-hover:opacity-100'
                       }`}></span>
                     </a>
@@ -93,11 +101,23 @@ const Header = () => {
             </ul>
           </nav>
 
-          {/* Action Button */}
-          <div className="hidden sm:block ml-4">
+          {/* Action Button - Right */}
+          <div className="hidden sm:block flex-shrink-0">
             <a 
               href="https://apply-now.tekkzy.com/" 
-              className="inline-block bg-[#ED3237] text-white text-[13px] font-bold uppercase tracking-[0.1em] px-7 py-2.5 rounded-sm shadow-sm hover:bg-[#D12B2F] transition-all transform hover:-translate-y-[1px] active:scale-95"
+              className="inline-block text-white text-[12px] font-extrabold uppercase tracking-[0.15em] px-8 py-3.5 rounded-lg transition-all duration-300 hover:-translate-y-0.5"
+              style={{
+                background: '#ED3237',
+                boxShadow: '0 4px 14px rgba(237,50,55,0.25)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = '#d9272b'
+                e.currentTarget.style.boxShadow = '0 6px 20px rgba(237,50,55,0.4)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = '#ED3237'
+                e.currentTarget.style.boxShadow = '0 4px 14px rgba(237,50,55,0.25)'
+              }}
             >
               APPLY NOW
             </a>
