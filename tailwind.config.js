@@ -17,6 +17,7 @@ export default {
         'violet': '#5a5af3',
         'brand-orange': '#E56D24',
         'brand-yellow': '#E5AA3E',
+        'brand-terracotta': '#BC5A42',
         'soft': 'rgba(37, 51, 134, 0.05)',
       },
       fontFamily: {

@@ -85,31 +85,46 @@ export const Stories = () => (
 
 
 // --- Facilities Section ---
-const FacilityCard = ({ icon: Icon, title, desc, img, delay }) => (
-  <motion.div 
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ delay }}
-    viewport={{ once: true }}
-    className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 group overflow-hidden"
-  >
-    <div className="relative h-56 overflow-hidden">
-      <img 
-        src={img} 
-        alt={title} 
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-navy-block/60 to-transparent"></div>
-      <div className="absolute bottom-4 left-6 w-12 h-12 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center text-white border border-white/20">
-        <Icon size={24} />
+const FacilityCard = ({ icon: Icon, title, desc, img, delay, link }) => {
+  const CardContent = (
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay }}
+      viewport={{ once: true }}
+      className={`bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 group overflow-hidden h-full ${link ? 'cursor-pointer' : ''}`}
+    >
+      <div className="relative h-56 overflow-hidden">
+        <img 
+          src={img} 
+          alt={title} 
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-block/60 to-transparent"></div>
+        <div className="absolute bottom-4 left-6 w-12 h-12 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center text-white border border-white/20">
+          <Icon size={24} />
+        </div>
       </div>
-    </div>
-    <div className="p-8">
-      <h4 className="font-heading text-xl text-royal-blue mb-3 group-hover:text-brand-accent transition-colors">{title}</h4>
-      <p className="text-charcoal/60 text-sm leading-relaxed">{desc}</p>
-    </div>
-  </motion.div>
-);
+      <div className="p-8">
+        <h4 className="font-heading text-xl text-royal-blue mb-3 group-hover:text-brand-accent transition-colors flex items-center gap-2">
+          {title}
+          {link && <ArrowRight size={18} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />}
+        </h4>
+        <p className="text-charcoal/60 text-sm leading-relaxed">{desc}</p>
+      </div>
+    </motion.div>
+  );
+
+  if (link) {
+    return (
+      <a href={link} target="_blank" rel="noopener noreferrer" className="block h-full">
+        {CardContent}
+      </a>
+    );
+  }
+
+  return CardContent;
+};
 
 export const Facilities = () => (
   <section className="py-24 bg-soft-off-white" id="facilities">
@@ -129,6 +144,7 @@ export const Facilities = () => (
           desc="AICTE-standard classrooms and state-of-the-art laboratories designed for immersive learning." 
           img="/facilities/modern_infrastructure.png"
           delay={0.1} 
+          link="https://campuslife-tat.tekkzy.com/Infrastructure/"
         />
         <FacilityCard 
           icon={Home} 
@@ -143,6 +159,7 @@ export const Facilities = () => (
           desc="Extensive fleet of buses ensuring reliable commute for students and staff across the city." 
           img="/facilities/safe_transport.png"
           delay={0.3} 
+          link="https://campuslife-tat.tekkzy.com/TRANSPORT/"
         />
         <FacilityCard 
           icon={Utensils} 
@@ -150,6 +167,7 @@ export const Facilities = () => (
           desc="Nutritious and hygienic dining options with multi-cuisine cafeterias on campus." 
           img="/facilities/food_centers.png"
           delay={0.4} 
+          link="https://campuslife-tat.tekkzy.com/Food-centers/"
         />
         <FacilityCard 
           icon={HeartPulse} 
@@ -157,6 +175,7 @@ export const Facilities = () => (
           desc="Dedicated health center with professional medical staff and emergency support systems." 
           img="/facilities/healthcare.png"
           delay={0.5} 
+          link="https://campuslife-tat.tekkzy.com/Healthcare/"
         />
         <FacilityCard 
           icon={Wifi} 
