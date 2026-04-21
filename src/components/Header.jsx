@@ -70,30 +70,17 @@ export default function Header({ onNavigate, currentPage }) {
           <nav className="hidden lg:block">
             <ul className="flex items-center gap-6">
               {NAV_LINKS.map(item => {
-                const isAbout = item.label === 'About';
-                const isAcademics = item.label === 'Academics';
                 const isCampusLifeRepo = item.label === 'Campus Life';
                 
-                const isActive = (isAbout && currentPage === 'about') || 
-                                (isAcademics && currentPage === 'libraries') ||
-                                (typeof window !== 'undefined' && (
-                                  window.location.href.includes(item.href.replace('https://', '').split('.')[0]) ||
-                                  (isCampusLifeRepo && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'))
-                                ));
+                const isActive = typeof window !== 'undefined' && (
+                  window.location.href.includes(item.href.replace('https://', '').split('.')[0]) ||
+                  (isCampusLifeRepo && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'))
+                );
 
                 return (
                   <li key={item.label}>
                     <a 
-                      href={(isAbout || isAcademics) ? "#" : item.href}
-                      onClick={(e) => {
-                        if (isAbout) {
-                          e.preventDefault();
-                          onNavigate('about');
-                        } else if (isAcademics) {
-                          e.preventDefault();
-                          onNavigate('libraries');
-                        }
-                      }}
+                      href={item.href}
                       className={cn(
                         "relative text-sm font-extrabold uppercase tracking-[0.14em] py-1 transition-all whitespace-nowrap group",
                         isActive ? "text-[#253386]" : "text-[#3E3A36] hover:text-[#253386]"
@@ -137,31 +124,18 @@ export default function Header({ onNavigate, currentPage }) {
         >
           <div className="px-6 flex flex-col h-full overflow-y-auto pb-4">
             {NAV_LINKS.map((item, i) => {
-              const isAbout = item.label === 'About';
-              const isAcademics = item.label === 'Academics';
               const isCampusLifeRepo = item.label === 'Campus Life';
               
-              const isActive = (isAbout && currentPage === 'about') || 
-                              (isAcademics && currentPage === 'libraries') ||
-                              (typeof window !== 'undefined' && (
-                                window.location.href.includes(item.href.replace('https://', '').split('.')[0]) ||
-                                (isCampusLifeRepo && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'))
-                              ));
+              const isActive = typeof window !== 'undefined' && (
+                window.location.href.includes(item.href.replace('https://', '').split('.')[0]) ||
+                (isCampusLifeRepo && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'))
+              );
 
               return (
                 <a 
                   key={item.label} 
-                  href={(isAbout || isAcademics) ? "#" : item.href}
-                  onClick={(e) => {
-                    if (isAbout) {
-                      e.preventDefault();
-                      onNavigate('about');
-                    } else if (isAcademics) {
-                      e.preventDefault();
-                      onNavigate('libraries');
-                    }
-                    setMobileOpen(false);
-                  }}
+                  href={item.href}
+                  onClick={() => setMobileOpen(false)}
                   className={cn(
                     "block py-3.5 text-[15px] font-extrabold uppercase tracking-[0.14em] rounded-lg px-3 transition-all duration-500 transform",
                     isActive ? "text-[#253386] bg-[#253386]/5" : "text-[#3E3A36] hover:text-[#253386] hover:bg-slate-50",
