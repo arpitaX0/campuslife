@@ -25,9 +25,7 @@ export const Research = () => (
             <span key={tag} className="px-4 py-1.5 bg-brand-gold/10 text-brand-gold rounded-full text-sm font-semibold border border-brand-gold/10">{tag}</span>
           ))}
         </div>
-        <a href="#" className="bg-royal-blue text-white px-8 py-3.5 rounded-full font-semibold transition-all hover:-translate-y-1 hover:shadow-lg">
-          View Publications
-        </a>
+
       </motion.div>
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
@@ -137,37 +135,24 @@ export const Facilities = () => (
         </h2>
         <p className="text-charcoal/70 text-lg max-w-2xl mx-auto">Providing a sustainable and empowering environment for advanced engineering education and holistic growth.</p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-        <FacilityCard 
-          icon={Building} 
-          title="Modern Infrastructure" 
-          desc="AICTE-standard classrooms and state-of-the-art laboratories designed for immersive learning." 
-          img="/facilities/modern_infrastructure.png"
-          delay={0.1} 
-          link="https://campuslife-tat.tekkzy.com/Infrastructure/"
-        />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
+
         <FacilityCard 
           icon={Home} 
           title="Premium Hostels" 
           desc="In-campus safe residence with a capacity of 1200+ inmates and modern amenities." 
           img="/facilities/premium_hostels.png"
           delay={0.2} 
+          link="https://campuslife-tat.tekkzy.com/hostels/"
         />
-        <FacilityCard 
-          icon={Bus} 
-          title="Safe Transport" 
-          desc="Extensive fleet of buses ensuring reliable commute for students and staff across the city." 
-          img="/facilities/safe_transport.png"
-          delay={0.3} 
-          link="https://campuslife-tat.tekkzy.com/TRANSPORT/"
-        />
+
         <FacilityCard 
           icon={Utensils} 
           title="Food Centers" 
           desc="Nutritious and hygienic dining options with multi-cuisine cafeterias on campus." 
           img="/facilities/food_centers.png"
           delay={0.4} 
-          link="https://campuslife-tat.tekkzy.com/Food-centers/"
+          link="https://campuslife-tat.tekkzy.com/food-centers/"
         />
         <FacilityCard 
           icon={HeartPulse} 
@@ -183,28 +168,9 @@ export const Facilities = () => (
           desc="High-speed internet connectivity across all institutional blocks and common areas." 
           img="/facilities/campus_wifi.png"
           delay={0.6} 
+          link="https://campuslife-tat.tekkzy.com/internet-and-wifi/"
         />
-        <FacilityCard 
-          icon={Shield} 
-          title="Security & Safety" 
-          desc="24/7 campus surveillance and professional security personnel for a safe environment." 
-          img="/facilities/security_safety.png"
-          delay={0.7} 
-        />
-        <FacilityCard 
-          icon={GraduationCap} 
-          title="Scholarships" 
-          desc="Comprehensive support systems including loans and merit-based institutional scholarships." 
-          img="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800"
-          delay={0.8} 
-        />
-        <FacilityCard 
-          icon={Monitor} 
-          title="ICT Classrooms" 
-          desc="Digital-first learning environments equipped with modern audio-visual and smart tools." 
-          img="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800"
-          delay={0.9} 
-        />
+
       </div>
     </div>
   </section>
@@ -217,24 +183,41 @@ export const Campus = () => (
         <div className="mb-16">
           <h2 className="font-heading text-5xl mb-6 text-charcoal">
             <span className="relative inline-block">
-              <span className="bg-gradient-primary bg-clip-text text-transparent font-bold relative z-10">Institutional Sanctum</span>
+              <span className="bg-gradient-primary bg-clip-text text-transparent font-bold relative z-10">Modern Infrastructure and Safe Transport</span>
             </span>
           </h2>
-          <p className="text-charcoal/70 text-lg">Designed for holistic development and unparalleled technical focus.</p>
+          <p className="text-charcoal/70 text-lg">Ensuring seamless learning experiences through advanced infrastructure and reliable campus connectivity.</p>
         </div>
         <div className="grid md:grid-cols-2 gap-10">
           {[
-            { title: 'The Global Digital Commons', desc: 'An executive workspace for collaborative research.', img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200' },
-            { title: 'The Creative Resilience Center', desc: 'Modern studio environments for conceptual design.', img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1200' }
-          ].map((item, idx) => (
-            <motion.div key={idx} initial={{ rotateX: -10, opacity: 0 }} whileInView={{ rotateX: 0, opacity: 1 }} viewport={{ once: true }} className="relative h-[500px] rounded-lg overflow-hidden group shadow-xl">
-              <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-block/90 via-transparent to-transparent p-10 flex flex-col justify-end">
-                <h4 className="text-white font-heading text-2xl mb-2">{item.title}</h4>
-                <p className="text-white/70">{item.desc}</p>
-              </div>
-            </motion.div>
-          ))}
+            { title: 'Modern Infrastructure', desc: 'AICTE-standard classrooms and state-of-the-art laboratories designed for immersive learning.', img: '/facilities/modern_infrastructure.png', link: 'https://campuslife-tat.tekkzy.com/Infrastructure/' },
+            { title: 'Safe Transport', desc: 'Extensive fleet of buses ensuring reliable commute for students and staff across the city.', img: '/facilities/safe_transport.png', link: 'https://campuslife-tat.tekkzy.com/transport/' }
+          ].map((item, idx) => {
+            const isClickable = !!item.link;
+            const CardWrap = isClickable ? motion.a : motion.div;
+            
+            return (
+              <CardWrap
+                href={item.link}
+                target={isClickable ? "_blank" : undefined}
+                rel={isClickable ? "noopener noreferrer" : undefined}
+                key={idx}
+                initial={{ rotateX: -10, opacity: 0 }}
+                whileInView={{ rotateX: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                className={`relative h-[500px] rounded-lg overflow-hidden group shadow-xl ${isClickable ? 'cursor-pointer block' : ''}`}
+              >
+                <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-block/90 via-transparent to-transparent p-10 flex flex-col justify-end">
+                  <h4 className="text-white font-heading text-2xl mb-2 flex items-center gap-2">
+                    {item.title}
+                    {isClickable && <ArrowRight size={20} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />}
+                  </h4>
+                  <p className="text-white/70">{item.desc}</p>
+                </div>
+              </CardWrap>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -313,25 +296,4 @@ export const Quote = () => (
     </section>
   );
 
-// --- CTA Section ---
-export const CTA = () => (
-  <section className="py-24 bg-soft-off-white" id="admissions">
-    <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24">
-      <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="bg-white rounded-lg p-12 md:p-20 text-center shadow-2xl relative overflow-hidden">
-        <div className="relative z-10">
-          <h2 className="font-heading text-4xl md:text-5xl mb-8 text-charcoal">
-            <span className="relative inline-block">
-              <span className="relative z-10">Join the Global Standard</span>
-            </span>
-          </h2>
-          <p className="text-charcoal/70 text-lg mb-10 max-w-2xl mx-auto">
-            Admissions for the 2026 Academic Season are now open. Secure your place at the forefront of the technological revolution.
-          </p>
-          <a href="#" className="inline-block bg-[#0f1115] text-white px-10 py-4 rounded-full font-bold hover:bg-black transition-all hover:-translate-y-1 hover:shadow-xl">
-             Application Portal
-          </a>
-        </div>
-      </motion.div>
-    </div>
-  </section>
-);
+

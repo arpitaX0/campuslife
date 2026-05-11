@@ -9,8 +9,7 @@ import {
   Facilities,
   Impact, 
   Faculty, 
-  Quote, 
-  CTA 
+  Quote
 } from './components/Sections';
 import Footer from './components/Footer';
 import AboutTrident from './pages/AboutTrident';
@@ -34,7 +33,6 @@ function App() {
             <Impact />
             <Faculty />
             <Quote />
-            <CTA />
           </>
         )}
         {currentPage === 'about' && <AboutTrident onNavigate={setCurrentPage} />}

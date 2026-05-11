@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 
 const News = () => {
   const highlights = [
-    { title: 'Global Alumni Summit 2026', desc: 'Connecting technical leaders in Silicon Valley.', img: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=200' },
-    { title: 'Sustainability in Robotics', desc: 'Defining the eco-standard for industrial automation.', img: 'https://images.unsplash.com/photo-1516110833967-0b5716ca1387?auto=format&fit=crop&q=80&w=200' },
-    { title: 'New Cybersecurity Wing', desc: 'State-of-the-art defense laboratory opening soon.', img: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=200' },
+    { title: 'Scholarships', desc: 'Comprehensive support systems including merit-based institutional scholarships.', img: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=200', link: 'https://campuslife-tat.tekkzy.com/scholarship/' },
+    { title: 'ICT Enable Classroom', desc: 'Digital-first learning environments equipped with modern smart tools.', img: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=200', link: 'https://campuslife-tat.tekkzy.com/ict-Enable-classroom/' },
+    { title: 'Campus Security', desc: '24/7 campus surveillance and professional security personnel.', img: '/facilities/security_safety.png', link: 'https://campuslife-tat.tekkzy.com/campus-security/' },
   ];
 
   return (
@@ -47,8 +47,11 @@ const News = () => {
           {/* Side News List */}
           <div className="flex flex-col gap-5">
             {highlights.map((item, idx) => (
-              <motion.div 
+              <motion.a 
                 key={idx}
+                href={item.link}
+                target={item.link ? "_blank" : undefined}
+                rel={item.link ? "noopener noreferrer" : undefined}
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
@@ -60,7 +63,7 @@ const News = () => {
                   <h5 className="font-heading text-xl text-white mb-2 group-hover:text-blue-400 transition-colors">{item.title}</h5>
                   <p className="text-white/70 text-sm">{item.desc}</p>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </div>

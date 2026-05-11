@@ -3,6 +3,23 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 const Hero = ({ onNavigate }) => {
+  const [currentSlide, setCurrentSlide] = React.useState(0);
+  
+  const slides = [
+    "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1200",
+    "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=1200",
+    "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=1200",
+    "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=1200",
+    "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&q=80&w=1200"
+  ];
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="min-h-screen flex items-center pt-[160px] pb-24 overflow-hidden relative bg-soft-off-white">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 grid lg:grid-cols-2 gap-20 items-center">
@@ -24,33 +41,9 @@ const Hero = ({ onNavigate }) => {
             Immerse yourself in Odisha's premier technical ecosystem. Rigorous academics meet world-class innovation labs to forge the leaders of tomorrow.
           </p>
           
-          <div className="flex flex-wrap gap-5">
-            <button 
-              onClick={() => onNavigate('programs')}
-              className="bg-white text-[#3E3A36] px-10 py-5 rounded-full font-bold transition-all hover:bg-[#253386] hover:text-white flex items-center gap-3 shadow-[0_10px_30px_rgba(0,0,0,0.05)] active:scale-95"
-            >
-              Our Programs <ArrowRight size={20} />
-            </button>
-            <button 
-              onClick={() => onNavigate('about')}
-              className="bg-transparent border border-[#3E3A36]/20 text-[#3E3A36] px-10 py-5 rounded-full font-bold transition-all hover:border-[#253386] hover:text-[#253386] active:scale-95"
-            >
-              About Trident
-            </button>
-          </div>
 
-          <div className="mt-16 flex items-center gap-6">
-            <div className="flex -space-x-4">
-              {[1, 2, 3, 4].map(i => (
-                <div key={i} className="w-12 h-12 rounded-full border-4 border-white overflow-hidden bg-slate-200">
-                  <img src={`https://i.pravatar.cc/100?img=${i+10}`} alt="Student" />
-                </div>
-              ))}
-            </div>
-            <div className="text-[13px] font-bold text-[#3E3A36]/40 uppercase tracking-widest">
-              Joined by <span className="text-[#253386]">10,000+</span> Alumni
-            </div>
-          </div>
+
+
         </motion.div>
 
         {/* Hero Image */}
@@ -62,22 +55,30 @@ const Hero = ({ onNavigate }) => {
           className="relative h-full flex items-center"
         >
           <div className="absolute -top-12 -left-24 w-[400px] h-[400px] bg-[#E5AA3E]/10 blur-[100px] rounded-full -z-10 animate-pulse"></div>
-          <div className="w-full aspect-[4/5] bg-[#070B2B] rounded-[40px] overflow-hidden shadow-[0_60px_100px_rgba(7,11,43,0.15)] relative">
-            <img 
-              src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1200" 
-              alt="Elite Campus Environment" 
-              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-90"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#070B2B]/60 to-transparent"></div>
+          <div className="w-full aspect-[4/5] bg-[#070B2B] rounded-[40px] overflow-hidden shadow-[0_60px_100px_rgba(7,11,43,0.15)] relative group">
+            {slides.map((slide, index) => (
+              <img 
+                key={index}
+                src={slide}
+                alt={`Elite Campus Environment ${index + 1}`} 
+                className={`absolute top-0 left-0 w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 ${index === currentSlide ? 'opacity-90 z-10' : 'opacity-0 z-0'}`}
+              />
+            ))}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#070B2B]/60 to-transparent z-20 pointer-events-none"></div>
             
             {/* Live Progress Indicator */}
-            <div className="absolute bottom-10 left-10 flex items-center gap-6 text-white/60 text-[12px] font-bold tracking-widest uppercase">
+            <div className="absolute bottom-10 left-10 flex items-center gap-6 text-white/60 text-[12px] font-bold tracking-widest uppercase z-30">
               <div className="flex gap-2">
-                {[1, 2, 3, 4, 5].map(i => (
-                  <div key={i} className={`h-1 rounded-full transition-all duration-500 ${i === 2 ? 'w-12 bg-[#E5AA3E]' : 'w-6 bg-white/20'}`}></div>
+                {slides.map((_, i) => (
+                  <button 
+                    key={i} 
+                    onClick={() => setCurrentSlide(i)}
+                    className={`h-1 rounded-full transition-all duration-500 cursor-pointer ${i === currentSlide ? 'w-12 bg-[#E5AA3E]' : 'w-6 bg-white/20 hover:bg-white/40'}`}
+                    aria-label={`Go to slide ${i + 1}`}
+                  />
                 ))}
               </div>
-              <span>02 / 05</span>
+              <span>{String(currentSlide + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}</span>
             </div>
           </div>
         </motion.div>
